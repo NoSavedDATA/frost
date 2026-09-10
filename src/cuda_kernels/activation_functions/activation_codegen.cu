@@ -7,7 +7,7 @@
 
 #include "../../../src/nsk_cpp.h"
 
-#include "../../nsk_cuda/pool/include.h"
+#include "../../frost/pool/include.h"
 #include "../../tensor/include.h"
 #include "../elementwise_kernels_inline.cu"
 #include "../calculate_grids.h"

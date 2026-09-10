@@ -9,8 +9,27 @@ class SGD
 		$optim_info.params.clear()
 		tarena_reset()
 
+
+kernel void AdamW_k(float[] param, float[] d, float[] m, float[] v,
+					float lr, int n, float beta1, float beta2,
+					float beta1_correction, float beta2_correction,
+					float eps, float wd)
+	int i = bx*256 + tx
+	if i>=n
+		return
+
+	float m_i = (1-beta1)*d[i] + beta1*m[i]
+	float v_i = (1-beta2)*(d[i]*d[i]) + beta2*v[i]
+	m[i] = m_i
+	v[i] = v_i
+
+	m_i/=beta1_correction
+	v_i/=beta2_correction
+	
+	param[i] -= lr*( m_i / (sqrt(v_i) + eps) + wd*param[i] )
+
 class AdamW
-	float lr, beta1, beta2
+	float lr, beta1, beta2, wd, eps
 	array<gpu_tensor> m, v
 	int ts
 
@@ -19,6 +38,8 @@ class AdamW
 		self.beta1 = beta1
 		self.beta2 = beta2
 		self.ts = 1
+		self.wd = 0.01
+		self.eps = 0.0000001
 
 	def float step()
 		int i=0
@@ -27,7 +48,15 @@ class AdamW
 				self.m.append(new gpu_tensor(param.dims, "zeros"))
 				self.v.append(new gpu_tensor(param.dims, "zeros"))
 
-			adamw_k(param.ptr, param.d, self.m[i].ptr, self.v[i].ptr, self.lr, param.dims_prod, self.beta1, self.beta2, self.ts)
+			float beta1_correction = 1.0-pow(self.beta1, self.ts)
+			float beta2_correction = 1.0-pow(self.beta2, self.ts)
+
+			launch [param.dims_prod/|256] [256] AdamW_k(param.ptr offby 0, param.d offby 0,
+									 self.m[i].ptr offby 0, self.v[i].ptr offby 0,
+									 self.lr, param.dims_prod, self.beta1, self.beta2,
+									 beta1_correction, beta2_correction, self.eps,
+									 self.wd
+								 )
 			param.d=nil
 			i=i+1
 			self.ts = self.ts+1

@@ -12,7 +12,6 @@ gpu int warpSum(int val)
 	val += shfl_sync(val, 2)
 	val += shfl_sync(val, 1)
 	return val
-	
 gpu float warpMax(float val)
 	val = max(val, shfl_sync(val, 16))
 	val = max(val, shfl_sync(val, 8))

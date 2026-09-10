@@ -4,7 +4,7 @@
 #include <cuda_fp16.h>
 #include <mma.h>
 
-#include "../nsk_cuda/include.h"
+#include "../frost/include.h"
 #include "utils.h"
 
 using namespace nvcuda;

@@ -1,6 +1,6 @@
 
 #include "util.h"
-#include "../nsk_cuda/include.h"
+#include "../frost/include.h"
 
 // Cuda
 #include <cuda_runtime.h>

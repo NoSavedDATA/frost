@@ -104,11 +104,11 @@ obj/optimizers/adamw/class.o: src/optimizers/adamw/class.cu \
   src/optimizers/adamw/../../cuda_kernels/calculate_grids.h \
   src/optimizers/adamw/../../cuda_threads/include.h \
   src/optimizers/adamw/../../cuda_threads/threads.h \
-  src/optimizers/adamw/../../nsk_cuda/pool/include.h \
-  src/optimizers/adamw/../../nsk_cuda/pool/pool_i8.h \
-  src/optimizers/adamw/../../nsk_cuda/pool/../../../../../src/nsk_cpp.h \
-  src/optimizers/adamw/../../nsk_cuda/pool/pool_i32.h \
-  src/optimizers/adamw/../../nsk_cuda/pool/pool.h \
+  src/optimizers/adamw/../../frost/pool/include.h \
+  src/optimizers/adamw/../../frost/pool/pool_i8.h \
+  src/optimizers/adamw/../../frost/pool/../../../../../src/nsk_cpp.h \
+  src/optimizers/adamw/../../frost/pool/pool_i32.h \
+  src/optimizers/adamw/../../frost/pool/pool.h \
   src/optimizers/adamw/../../tensor/tensor_dim_functions.h \
   src/optimizers/adamw/../../tensor/include.h \
   src/optimizers/adamw/../../tensor/../../../../src/nsk_cpp.h \
@@ -221,11 +221,11 @@ src/optimizers/adamw/../../common/cu_commons.h:
 src/optimizers/adamw/../../cuda_kernels/calculate_grids.h:
 src/optimizers/adamw/../../cuda_threads/include.h:
 src/optimizers/adamw/../../cuda_threads/threads.h:
-src/optimizers/adamw/../../nsk_cuda/pool/include.h:
-src/optimizers/adamw/../../nsk_cuda/pool/pool_i8.h:
-src/optimizers/adamw/../../nsk_cuda/pool/../../../../../src/nsk_cpp.h:
-src/optimizers/adamw/../../nsk_cuda/pool/pool_i32.h:
-src/optimizers/adamw/../../nsk_cuda/pool/pool.h:
+src/optimizers/adamw/../../frost/pool/include.h:
+src/optimizers/adamw/../../frost/pool/pool_i8.h:
+src/optimizers/adamw/../../frost/pool/../../../../../src/nsk_cpp.h:
+src/optimizers/adamw/../../frost/pool/pool_i32.h:
+src/optimizers/adamw/../../frost/pool/pool.h:
 src/optimizers/adamw/../../tensor/tensor_dim_functions.h:
 src/optimizers/adamw/../../tensor/include.h:
 src/optimizers/adamw/../../tensor/../../../../src/nsk_cpp.h:

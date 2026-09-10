@@ -103,11 +103,11 @@ obj/cuda_kernels/tensor_scalar_codegen.o: \
   src/cuda_kernels/../../../../src/runtime/prebuild/prebuild.h \
   src/cuda_kernels/../cuda_threads/include.h \
   src/cuda_kernels/../cuda_threads/threads.h \
-  src/cuda_kernels/../nsk_cuda/pool/include.h \
-  src/cuda_kernels/../nsk_cuda/pool/pool_i8.h \
-  src/cuda_kernels/../nsk_cuda/pool/../../../../../src/nsk_cpp.h \
-  src/cuda_kernels/../nsk_cuda/pool/pool_i32.h \
-  src/cuda_kernels/../nsk_cuda/pool/pool.h \
+  src/cuda_kernels/../frost/pool/include.h \
+  src/cuda_kernels/../frost/pool/pool_i8.h \
+  src/cuda_kernels/../frost/pool/../../../../../src/nsk_cpp.h \
+  src/cuda_kernels/../frost/pool/pool_i32.h \
+  src/cuda_kernels/../frost/pool/pool.h \
   src/cuda_kernels/../tensor/include.h \
   src/cuda_kernels/../tensor/../../../../src/nsk_cpp.h \
   src/cuda_kernels/../tensor/print.h src/cuda_kernels/../tensor/save.h \
@@ -245,11 +245,11 @@ src/cuda_kernels/../../../../src/runtime/threads/include.h:
 src/cuda_kernels/../../../../src/runtime/prebuild/prebuild.h:
 src/cuda_kernels/../cuda_threads/include.h:
 src/cuda_kernels/../cuda_threads/threads.h:
-src/cuda_kernels/../nsk_cuda/pool/include.h:
-src/cuda_kernels/../nsk_cuda/pool/pool_i8.h:
-src/cuda_kernels/../nsk_cuda/pool/../../../../../src/nsk_cpp.h:
-src/cuda_kernels/../nsk_cuda/pool/pool_i32.h:
-src/cuda_kernels/../nsk_cuda/pool/pool.h:
+src/cuda_kernels/../frost/pool/include.h:
+src/cuda_kernels/../frost/pool/pool_i8.h:
+src/cuda_kernels/../frost/pool/../../../../../src/nsk_cpp.h:
+src/cuda_kernels/../frost/pool/pool_i32.h:
+src/cuda_kernels/../frost/pool/pool.h:
 src/cuda_kernels/../tensor/include.h:
 src/cuda_kernels/../tensor/../../../../src/nsk_cpp.h:
 src/cuda_kernels/../tensor/print.h:

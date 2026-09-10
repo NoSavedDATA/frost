@@ -7,7 +7,7 @@
 #include "../../common/cu_commons.h"
 #include "../../cuda_kernels/calculate_grids.h"
 #include "../../cuda_threads/include.h"
-#include "../../nsk_cuda/pool/include.h"
+#include "../../frost/pool/include.h"
 #include "../../tensor/tensor_dim_functions.h"
 
 #include "../common.h"

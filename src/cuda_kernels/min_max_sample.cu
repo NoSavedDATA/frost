@@ -8,7 +8,7 @@
 #include <mma.h>
 
 #include "../common/include.h"
-#include "../nsk_cuda/pool/include.h"
+#include "../frost/pool/include.h"
 #include "../tensor/include.h"
 #include "calculate_grids.h"
 #include "elementwise_kernels_inline.cu"

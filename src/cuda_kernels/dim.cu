@@ -8,7 +8,7 @@
 
 #include "../../../src/nsk_cpp.h"
 #include "../common/cu_commons.h"
-#include "../nsk_cuda/pool/include.h"
+#include "../frost/pool/include.h"
 #include "../tensor/include.h"
 #include "calculate_grids.h"
 #include "dim_kernels.h"

@@ -1,10 +1,4 @@
 
-def int array_int_prod(array<int> v)
-	int prod = 1
-	for i in v
-		prod = prod*i
-	return prod
-
 class optim_info
 	array<gpu_tensor> params
 	ctor()

@@ -50,8 +50,6 @@ kernel void argmax_k(float[] y, float[] x, int m, int n)
 	if row<m
 		y[row] = max_id
 
-
-
 def gpu_tensor gpu_tensor_argmax(gpu_tensor x, int dim=-1)
 	int m, n
 	array<int> new_dims
@@ -59,11 +57,6 @@ def gpu_tensor gpu_tensor_argmax(gpu_tensor x, int dim=-1)
 	gpu_tensor ret = new gpu_tensor(new_dims, "zeros")
 	launch [m/|8] [256] argmax_k(ret.ptr offby 0, x.ptr offby 0, m, n)
 	return ret
-
-
-
-
-
 
 kernel void mean_kernel(float[] y, float[] x, int m, int n)
 	var v = layout<float,m,n>(x)
@@ -79,7 +72,6 @@ kernel void mean_kernel(float[] y, float[] x, int m, int n)
 
 	if row<m
 		y[row] = sum / n
-		
 
 def gpu_tensor gpu_tensor_mean(gpu_tensor x, int dim=-1)
 	int m, n

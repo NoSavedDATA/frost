@@ -102,11 +102,11 @@ obj/cuda_kernels/rl.o: src/cuda_kernels/rl.cu src/../../../src/nsk_cpp.h \
   src/cuda_kernels/../common/include.h \
   src/cuda_kernels/../common/cu_commons.h \
   src/cuda_kernels/../common/extension_functions.h \
-  src/cuda_kernels/../nsk_cuda/pool/include.h \
-  src/cuda_kernels/../nsk_cuda/pool/pool_i8.h \
-  src/cuda_kernels/../nsk_cuda/pool/../../../../../src/nsk_cpp.h \
-  src/cuda_kernels/../nsk_cuda/pool/pool_i32.h \
-  src/cuda_kernels/../nsk_cuda/pool/pool.h \
+  src/cuda_kernels/../frost/pool/include.h \
+  src/cuda_kernels/../frost/pool/pool_i8.h \
+  src/cuda_kernels/../frost/pool/../../../../../src/nsk_cpp.h \
+  src/cuda_kernels/../frost/pool/pool_i32.h \
+  src/cuda_kernels/../frost/pool/pool.h \
   src/cuda_kernels/../tensor/include.h \
   src/cuda_kernels/../tensor/../../../../src/nsk_cpp.h \
   src/cuda_kernels/../tensor/print.h src/cuda_kernels/../tensor/save.h \
@@ -217,11 +217,11 @@ src/../../../src/runtime/prebuild/prebuild.h:
 src/cuda_kernels/../common/include.h:
 src/cuda_kernels/../common/cu_commons.h:
 src/cuda_kernels/../common/extension_functions.h:
-src/cuda_kernels/../nsk_cuda/pool/include.h:
-src/cuda_kernels/../nsk_cuda/pool/pool_i8.h:
-src/cuda_kernels/../nsk_cuda/pool/../../../../../src/nsk_cpp.h:
-src/cuda_kernels/../nsk_cuda/pool/pool_i32.h:
-src/cuda_kernels/../nsk_cuda/pool/pool.h:
+src/cuda_kernels/../frost/pool/include.h:
+src/cuda_kernels/../frost/pool/pool_i8.h:
+src/cuda_kernels/../frost/pool/../../../../../src/nsk_cpp.h:
+src/cuda_kernels/../frost/pool/pool_i32.h:
+src/cuda_kernels/../frost/pool/pool.h:
 src/cuda_kernels/../tensor/include.h:
 src/cuda_kernels/../tensor/../../../../src/nsk_cpp.h:
 src/cuda_kernels/../tensor/print.h:

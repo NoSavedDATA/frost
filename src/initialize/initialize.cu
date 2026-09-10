@@ -14,7 +14,7 @@ llvm::Type *bf16_cpu_llvm(std::unique_ptr<LLVMContext> &ctx) {
 }
 
 
-extern "C" void initialize__nsk_cuda() {
+extern "C" void initialize__frost() {
   for (int i=0;i<10;++i) {
     cudaStream_t thread_stream = createCudaStream();
     ThreadsStream[i] = thread_stream;

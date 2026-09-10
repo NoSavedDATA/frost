@@ -100,11 +100,11 @@ obj/cuda_kernels/loss_functions/classification.o: \
   src/../../../src/runtime/profiler/profiler.h \
   src/../../../src/runtime/threads/include.h \
   src/../../../src/runtime/prebuild/prebuild.h \
-  src/cuda_kernels/loss_functions/../../nsk_cuda/pool/include.h \
-  src/cuda_kernels/loss_functions/../../nsk_cuda/pool/pool_i8.h \
-  src/cuda_kernels/loss_functions/../../nsk_cuda/pool/../../../../../src/nsk_cpp.h \
-  src/cuda_kernels/loss_functions/../../nsk_cuda/pool/pool_i32.h \
-  src/cuda_kernels/loss_functions/../../nsk_cuda/pool/pool.h \
+  src/cuda_kernels/loss_functions/../../frost/pool/include.h \
+  src/cuda_kernels/loss_functions/../../frost/pool/pool_i8.h \
+  src/cuda_kernels/loss_functions/../../frost/pool/../../../../../src/nsk_cpp.h \
+  src/cuda_kernels/loss_functions/../../frost/pool/pool_i32.h \
+  src/cuda_kernels/loss_functions/../../frost/pool/pool.h \
   src/cuda_kernels/loss_functions/../../cuda_threads/include.h \
   src/cuda_kernels/loss_functions/../../cuda_threads/threads.h \
   src/cuda_kernels/loss_functions/../../pool/include.h \
@@ -221,11 +221,11 @@ src/../../../src/runtime/profiler/include.h:
 src/../../../src/runtime/profiler/profiler.h:
 src/../../../src/runtime/threads/include.h:
 src/../../../src/runtime/prebuild/prebuild.h:
-src/cuda_kernels/loss_functions/../../nsk_cuda/pool/include.h:
-src/cuda_kernels/loss_functions/../../nsk_cuda/pool/pool_i8.h:
-src/cuda_kernels/loss_functions/../../nsk_cuda/pool/../../../../../src/nsk_cpp.h:
-src/cuda_kernels/loss_functions/../../nsk_cuda/pool/pool_i32.h:
-src/cuda_kernels/loss_functions/../../nsk_cuda/pool/pool.h:
+src/cuda_kernels/loss_functions/../../frost/pool/include.h:
+src/cuda_kernels/loss_functions/../../frost/pool/pool_i8.h:
+src/cuda_kernels/loss_functions/../../frost/pool/../../../../../src/nsk_cpp.h:
+src/cuda_kernels/loss_functions/../../frost/pool/pool_i32.h:
+src/cuda_kernels/loss_functions/../../frost/pool/pool.h:
 src/cuda_kernels/loss_functions/../../cuda_threads/include.h:
 src/cuda_kernels/loss_functions/../../cuda_threads/threads.h:
 src/cuda_kernels/loss_functions/../../pool/include.h:

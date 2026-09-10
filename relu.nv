@@ -17,7 +17,6 @@ kernel void relu_backward_kernel(float[] y, float[] dx, float[] dy, int n)
 		dx[idx] = 0
 
 
-
 def gpu_tensor relu(gpu_tensor x)
 	gpu_tensor ret = new gpu_tensor(x.dims, "zeros_pool")
 	launch [x.dims_prod/|256] [256] relu_kernel(

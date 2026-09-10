@@ -11,7 +11,7 @@
 #include "../common/cu_commons.h"
 #include "../cuda_kernels/calculate_grids.h"
 #include "../cuda_kernels/elementwise_kernels_inline.cu"
-#include "../nsk_cuda/pool/include.h"
+#include "../frost/pool/include.h"
 #include "../tensor/include.h"
 #include "../../src/nsk_cpp.h"
 #include "include.h"
@@ -102,7 +102,7 @@ extern "C" void *zeros_cuda(Scope_Struct *scope_struct, int size){
 
     float *tensor_ptr;
     cudaMalloc(&tensor_ptr, size*4);
-    // cudaCheck(cudaMemcpy(tensor_ptr, tensor_cpu, size*4, cudaMemcpyHostToDevice));
+    cudaCheck(cudaMemcpy(tensor_ptr, tensor_cpu, size*4, cudaMemcpyHostToDevice));
     free(tensor_cpu);
     *ptr = tensor_ptr;
     return (void*)ptr;

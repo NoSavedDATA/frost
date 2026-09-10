@@ -6,7 +6,7 @@
 #include "cuda_threads/include.h"
 #include "data_types/include.h"
 #include "mma/include.h"
-#include "nsk_cuda/include.h"
+#include "frost/include.h"
 #include "optimizers/include.h"
 #include "pool/include.h"
 #include "processing/include.h"

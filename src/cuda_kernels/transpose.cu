@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../src/nsk_cpp.h"
-#include "../nsk_cuda/include.h"
+#include "../frost/include.h"
 #include "../tensor/include.h"
 
 

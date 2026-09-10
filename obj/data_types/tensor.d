@@ -103,12 +103,11 @@ obj/data_types/tensor.o: src/data_types/tensor.cu \
   src/data_types/../common/cu_commons.h \
   src/data_types/../cuda_kernels/calculate_grids.h \
   src/data_types/../cuda_kernels/elementwise_kernels_inline.cu \
-  src/data_types/../nsk_cuda/pool/include.h \
-  src/data_types/../nsk_cuda/pool/pool_i8.h \
-  src/data_types/../nsk_cuda/pool/../../../../../src/nsk_cpp.h \
-  src/data_types/../nsk_cuda/pool/pool_i32.h \
-  src/data_types/../nsk_cuda/pool/pool.h \
-  src/data_types/../tensor/include.h \
+  src/data_types/../frost/pool/include.h \
+  src/data_types/../frost/pool/pool_i8.h \
+  src/data_types/../frost/pool/../../../../../src/nsk_cpp.h \
+  src/data_types/../frost/pool/pool_i32.h \
+  src/data_types/../frost/pool/pool.h src/data_types/../tensor/include.h \
   src/data_types/../tensor/../../../../src/nsk_cpp.h \
   src/data_types/../tensor/print.h src/data_types/../tensor/save.h \
   src/data_types/../tensor/tensor_dim_functions.h \
@@ -220,11 +219,11 @@ src/../../../src/runtime/prebuild/prebuild.h:
 src/data_types/../common/cu_commons.h:
 src/data_types/../cuda_kernels/calculate_grids.h:
 src/data_types/../cuda_kernels/elementwise_kernels_inline.cu:
-src/data_types/../nsk_cuda/pool/include.h:
-src/data_types/../nsk_cuda/pool/pool_i8.h:
-src/data_types/../nsk_cuda/pool/../../../../../src/nsk_cpp.h:
-src/data_types/../nsk_cuda/pool/pool_i32.h:
-src/data_types/../nsk_cuda/pool/pool.h:
+src/data_types/../frost/pool/include.h:
+src/data_types/../frost/pool/pool_i8.h:
+src/data_types/../frost/pool/../../../../../src/nsk_cpp.h:
+src/data_types/../frost/pool/pool_i32.h:
+src/data_types/../frost/pool/pool.h:
 src/data_types/../tensor/include.h:
 src/data_types/../tensor/../../../../src/nsk_cpp.h:
 src/data_types/../tensor/print.h:

@@ -1,5 +1,5 @@
 #include "../utils.h"
-#include "../../nsk_cuda/include.h"
+#include "../../frost/include.h"
 #include "wmma_blocking.h"
 
 #include <cuda.h>

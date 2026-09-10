@@ -104,11 +104,11 @@ obj/optimizers/sgd/class.o: src/optimizers/sgd/class.cu \
   src/optimizers/sgd/../../cuda_kernels/calculate_grids.h \
   src/optimizers/sgd/../../cuda_threads/include.h \
   src/optimizers/sgd/../../cuda_threads/threads.h \
-  src/optimizers/sgd/../../nsk_cuda/pool/include.h \
-  src/optimizers/sgd/../../nsk_cuda/pool/pool_i8.h \
-  src/optimizers/sgd/../../nsk_cuda/pool/../../../../../src/nsk_cpp.h \
-  src/optimizers/sgd/../../nsk_cuda/pool/pool_i32.h \
-  src/optimizers/sgd/../../nsk_cuda/pool/pool.h \
+  src/optimizers/sgd/../../frost/pool/include.h \
+  src/optimizers/sgd/../../frost/pool/pool_i8.h \
+  src/optimizers/sgd/../../frost/pool/../../../../../src/nsk_cpp.h \
+  src/optimizers/sgd/../../frost/pool/pool_i32.h \
+  src/optimizers/sgd/../../frost/pool/pool.h \
   src/optimizers/sgd/../../tensor/tensor_dim_functions.h \
   src/optimizers/sgd/../../tensor/include.h \
   src/optimizers/sgd/../../tensor/../../../../src/nsk_cpp.h \
@@ -221,11 +221,11 @@ src/optimizers/sgd/../../common/cu_commons.h:
 src/optimizers/sgd/../../cuda_kernels/calculate_grids.h:
 src/optimizers/sgd/../../cuda_threads/include.h:
 src/optimizers/sgd/../../cuda_threads/threads.h:
-src/optimizers/sgd/../../nsk_cuda/pool/include.h:
-src/optimizers/sgd/../../nsk_cuda/pool/pool_i8.h:
-src/optimizers/sgd/../../nsk_cuda/pool/../../../../../src/nsk_cpp.h:
-src/optimizers/sgd/../../nsk_cuda/pool/pool_i32.h:
-src/optimizers/sgd/../../nsk_cuda/pool/pool.h:
+src/optimizers/sgd/../../frost/pool/include.h:
+src/optimizers/sgd/../../frost/pool/pool_i8.h:
+src/optimizers/sgd/../../frost/pool/../../../../../src/nsk_cpp.h:
+src/optimizers/sgd/../../frost/pool/pool_i32.h:
+src/optimizers/sgd/../../frost/pool/pool.h:
 src/optimizers/sgd/../../tensor/tensor_dim_functions.h:
 src/optimizers/sgd/../../tensor/include.h:
 src/optimizers/sgd/../../tensor/../../../../src/nsk_cpp.h:

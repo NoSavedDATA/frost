@@ -39,7 +39,7 @@ import relu
 import dim_kernels
 
 
-def int nsk_cuda_prebuild()
+def int frost_prebuild()
 	$backprop.backs["add"] = add_backward
 	$backprop.backs["mma"] = mma_backward
 	$backprop.backs["relu"] = relu_backward

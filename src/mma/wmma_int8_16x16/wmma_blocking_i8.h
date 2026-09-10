@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../nsk_cuda/include.h"
+#include "../../frost/include.h"
 
 using namespace nvcuda;
 

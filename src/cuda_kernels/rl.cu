@@ -7,7 +7,7 @@
 
 #include "../../../src/nsk_cpp.h"
 #include "../common/include.h"
-#include "../nsk_cuda/pool/include.h"
+#include "../frost/pool/include.h"
 #include "../tensor/include.h"
 #include "calculate_grids.h"
 #include "rl_kernels.h"
