@@ -22,7 +22,7 @@ class gpu_tensor
 
 	ctor(array<int> dims, str init)
 		self.dims = dims
-		self.dims_prod = array_int_prod(self.dims)
+		self.dims_prod = self.dims reduce *
 		self.is_weight = false
 		self.shall_prop = false
 		self.d = nil
@@ -30,15 +30,28 @@ class gpu_tensor
 		if init=="xavu"
 			self.ptr = xavu_cuda(self.dims_prod, dims[0], dims[1])
 			self.type = float_t
+		if init=="xavu_relu"
+			self.ptr = xavu_relu_cuda(self.dims_prod, dims[0], dims[1])
+			self.type = float_t
+		if init=="kaiming"
+			self.ptr = kaiming_cuda(self.dims_prod, dims[0], dims[1])
+			self.type = float_t
+		if init=="kaiming_relu"
+			self.ptr = kaiming_relu_cuda(self.dims_prod, dims[0], dims[1])
+			self.type = float_t
 		if init=="conv"
-			#self.ptr = xavu_cuda(self.dims_prod, dims[0]*dims[-1]*dims[-1], dims[1]*dims[-1]*dims[-1])
-			self.ptr = xavu_conv(dims[0], dims[1], dims[2], dims[3], self.dims_prod)
+			#self.ptr = kaiming_relu_cuda(self.dims_prod, dims[0]*dims[-1]*dims[-1], dims[1]*dims[-1]*dims[-1])
+			self.ptr = xavu_cuda(self.dims_prod, dims[0]*dims[-1]*dims[-1], dims[1]*dims[-1]*dims[-1])
+			#self.ptr = xavu_conv(dims[0], dims[1], dims[2], dims[3], self.dims_prod)
 			self.type = float_t
 		if init=="randu"
 			self.ptr = randu_cuda(self.dims_prod)
 			self.type = float_t
 		if init=="zeros"
 			self.ptr = zeros_cuda(self.dims_prod)
+			self.type = float_t
+		if init=="zeros_pool"
+			self.ptr = zeros_cuda_pool(self.dims_prod)
 			self.type = float_t
 		if init=="ones"
 			self.ptr = ones_cuda(self.dims_prod)
@@ -127,7 +140,11 @@ class gpu_tensor
 		view_gpu_tensor.ptr = self.ptr
 		view_gpu_tensor.d = self.d
 		view_gpu_tensor.shall_prop = self.shall_prop
+		if self.shall_prop
+			$backprop.register([self], [view_gpu_tensor], "view")
 		return view_gpu_tensor
+
+
 
 
 

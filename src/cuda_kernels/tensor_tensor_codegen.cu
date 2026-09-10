@@ -63,14 +63,16 @@ extern "C" void *relu_k(Scope_Struct *scope_struct, void *x, int dims_prod) {
   *z = out;
   return (void*)z;
 }
-extern "C" int relu_backward_k(Scope_Struct *scope_struct, void *dout, void *x, void *y, int dims_prod) {
+extern "C" int relu_backward_k(Scope_Struct *scope_struct,
+                               void *y, void *dinp, void *dout,
+                               int dims_prod) {
   int tid = scope_struct->thread_id;
   cudaStream_t stream = ThreadsStream[tid];
 
   int grid_size, block_size;
   CalculateGridAndBlockSizes(dims_prod, grid_size, block_size);
   
-  relu_backward1<<<grid_size, block_size, 0, stream>>>(*(float**)y, *(float**)dout, *(float**)x, dims_prod);
+  relu_backward1<<<grid_size, block_size, 0, stream>>>(*(float**)y, *(float**)dinp, *(float**)dout, dims_prod);
 
   return 0;
 }
@@ -111,8 +113,11 @@ extern "C" void *softmax_k(Scope_Struct *scope_struct, void *x, int M, int N) {
 
 
 
+static std::unordered_map<std::string, CUfunction> kernel_cache;
+static std::mutex cache_mutex;
 
 extern "C" void neve_gpu_launch(char *fn, char *ptx,
+        int tid,
         int gx, int gy, int gz, int bx, int by, int bz,
         int smem,
         void **args) {
@@ -126,58 +131,51 @@ extern "C" void neve_gpu_launch(char *fn, char *ptx,
         fprintf(stderr, "No active CUDA context\n");
         abort();
     }
-    // std::cout << "" << ptx << "";
 
-    CUfunction kernel;
-    CUmodule gpuModule;
+    CUfunction kernel = nullptr;
+    std::string cache_key = std::string(fn) + ptx;
 
-    cuModuleLoadDataEx(
-        &gpuModule,
-        ptx,
-        0,
-        nullptr,
-        nullptr
-    );
+    {
+        std::lock_guard<std::mutex> lock(cache_mutex);
+        auto it = kernel_cache.find(cache_key);
+        
+        if (it != kernel_cache.end()) {
+            kernel = it->second; // Use cached kernel
+        } else {
+            // std::cout << "NOT IN CACHE " << fn << "\n";
+            CUmodule gpuModule;
+            cuModuleLoadDataEx(&gpuModule, ptx, 0, nullptr, nullptr);
+            
+            CUresult res = cuModuleGetFunction(&kernel, gpuModule, fn);
+            if (res != CUDA_SUCCESS) {
+                const char *name;
+                const char *str;
 
-    CUresult res = cuModuleGetFunction(
-        &kernel,
-        gpuModule,
-        fn
-    );
+                cuGetErrorName(res, &name);
+                cuGetErrorString(res, &str);
 
-
-    if (res != CUDA_SUCCESS) {
-        const char *name;
-        const char *str;
-
-        cuGetErrorName(res, &name);
-        cuGetErrorString(res, &str);
-
-        std::cout << "LAUNCH ERROR" << "\n";
-        printf("%s: %s\n", name, str);
-        std::cout << ptx << "\n";
-        abort();
+                std::cout << "LAUNCH ERROR" << "\n";
+                printf("%s: %s\n", name, str);
+                std::cout << ptx << "\n";
+                abort();
+            }
+            
+            // Save to cache (leak is prevented because we reuse this one module)
+            kernel_cache[cache_key] = kernel; 
+        }
     }
 
 
-    // int gx=1, gy=1, gz=1;
-    // int bx=32, by=1, bz=1;
-
-
-    std::cout << "grid (" << gx << ", " << gy << ", " << gz << ")" << "\n";
-    std::cout << "block (" << bx << ", " << by << ", " << bz << ")" << "\n";
-    std::cout << "smem " << smem << "\n";
-
-    res = cuLaunchKernel(
+    CUresult res = cuLaunchKernel(
         kernel,
         gx, gy, gz,
         bx, by, bz,
         smem,
-        0,
+        ThreadsStream[tid],
         args,
         nullptr
     );
-    // cudaDeviceSynchronize();
+
 
     if (res != CUDA_SUCCESS) {
         std::cout << "--KERNEL ERROR " << res << "\n";

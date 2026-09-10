@@ -32,7 +32,7 @@ extern "C" float adamw_k(Scope_Struct *scope_struct, void *param, void *grad, vo
                                            dims_prod, lr,
                                            beta1, beta2,
                                            beta1_correction, beta2_correction,
-                                           eps, 0, 0);
+                                           eps, 0.01, 0);
   return 0;
 }
 

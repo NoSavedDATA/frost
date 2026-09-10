@@ -1,57 +1,65 @@
 class BackNode
-	gpu_tensor l, r, out
+	array<gpu_tensor> inp, out
 	bool solved
 	str op
 	any module
-	ctor(gpu_tensor l, gpu_tensor r, gpu_tensor out, str op)
-		self.l = l
-		self.r = r
+	ctor(array<gpu_tensor> inp, array<gpu_tensor> out, str op)
+		self.inp = inp
 		self.out = out
 		self.op = op
 		self.solved = false
-		if l
-			if l.shall_prop
-				l.reqs.append(self)
-		if !!r and r.shall_prop
-			r.reqs.append(self)
+		self.module = nil
+
+		for _inp in inp
+			$backprop.grad_deps[_inp].append(self)
 
 class backprop
+	bool on
 	array<BackNode> ops
-	map<str, Function<int, float_pp, gpu_tensor, gpu_tensor>> backs
-	map<str, Function<int, float_pp, gpu_tensor, gpu_tensor>> loss_backs
-	map<str, Function<int, float_pp, gpu_tensor, any>> module_backs
-	int last_back_op
+	map<gpu_tensor, array<BackNode>> grad_deps
+	map<str, Function<int, array<gpu_tensor>, array<gpu_tensor>, any>> backs
 	ctor()
-		self.last_back_op = 0
-
-	def float register(gpu_tensor l, gpu_tensor r, gpu_tensor out, str op)
-		self.ops.append(new BackNode(l, r, out, op))
-
-	def float register_module(gpu_tensor inp, any module, gpu_tensor out, str op)
-		#self.ops.append(new BackNode(l, r, out, op))
-		var node = new BackNode(inp, nil, out, op)
-		node.module = module
-		self.ops.append(node)
-		
+		self.on = true
+		0		
 
 	def float backward()
-		int op_count=self.ops.size()
-		for i=0, i<op_count
-			var op = self.ops[op_count-1-i]
-			op.solved=true
+		for i=self.ops.size()-1, i>=0, -1
+			var op = self.ops[i]
 
-			if self.loss_backs.has(op.op)
-				float_pp dinp=op.l.getd()
-				self.loss_backs[op.op](dinp, op.l, op.r)
-			else
-				float_pp dout=op.out.getd()
-				if self.module_backs.has(op.op)
-					self.module_backs[op.op](dout, op.l, op.module)
-				else
-					self.backs[op.op](dout, op.l, op.r)
-			if !!op.l
-				op.l.reqs.clear()
-			if !!op.r
-				op.r.reqs.clear()
+			bool shall_prop = false
+			for inp in op.inp
+				if inp.shall_prop
+					shall_prop=true
+					break
+			if shall_prop
+				self.backward_one(op)
 
 		self.ops.clear()
+		self.grad_deps.clear()
+
+	def float backward_one(BackNode op)
+		if op.solved
+			return 0
+		if !!op.out # if not loss
+			for out in op.out
+				if !out
+					continue
+				if !self.grad_deps.has(out) or !out.shall_prop
+					continue
+				for dep in self.grad_deps[out]
+					self.backward_one(dep)
+
+		self.backs[op.op](op.inp, op.out, op.module)
+		op.solved=true
+
+
+	def float register(array<gpu_tensor> inp, array<gpu_tensor> out, str op)
+		if self.on
+			self.ops.append(new BackNode(inp, out, op))
+
+	def float register_module(array<gpu_tensor> inp, array<gpu_tensor> out, any module, str op)
+		if !self.on
+			return 0
+		var node = new BackNode(inp, out, op)
+		node.module = module
+		self.ops.append(node)

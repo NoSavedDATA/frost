@@ -18,15 +18,11 @@ __global__ void relu_forward(const float* Z, float* A,
 __global__ void relu_backward1(const float* Z, float* dZ, const float* dA,
                                        const int N) {
     int index = blockIdx.x * blockDim.x + threadIdx.x;
-
-    
     if (index < N) {
-        if (Z[index] > 0) {
+        if (Z[index] > 0)
             dZ[index] = dA[index];
-        }
-        else {
+        else
             dZ[index] = 0;
-        }
     }
 }
 

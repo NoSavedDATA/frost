@@ -22,7 +22,7 @@ extern "C" Value *float_pp_int_offby(Parser_Struct *parser_struct, Function *The
            std::unique_ptr<ExprAST>& RHS,
            Value *scope_struct,
            Value *L, Value *R) {
-    Value *ret = callret("allocate_pool", {scope_struct, const_int(8), const_int16(data_name_to_type()["float_cpu"])});
+    Value *ret = callret("allocate_pool", {scope_struct, const_int(8), const_int16(data_name_to_type()["float_pp"])});
     Value *float_p = Builder->CreateLoad(floatTy->getPointerTo(), L);
 
     Builder->CreateStore(Builder->CreateGEP(floatTy, float_p, R),
@@ -52,7 +52,7 @@ extern "C" Value *bf16_pp_int_offby(Parser_Struct *parser_struct, Function *TheF
            std::unique_ptr<ExprAST>& RHS,
            Value *scope_struct,
            Value *L, Value *R) {
-    Value *ret = callret("allocate_pool", {scope_struct, const_int(8), const_int16(data_name_to_type()["bf16_cpu"])});
+    Value *ret = callret("allocate_pool", {scope_struct, const_int(8), const_int16(data_name_to_type()["bf16_pp"])});
     Value *float_p = Builder->CreateLoad(int16Ty->getPointerTo(), L);
 
     Builder->CreateStore(Builder->CreateGEP(int16Ty, float_p, R),

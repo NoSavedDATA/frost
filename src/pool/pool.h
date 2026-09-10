@@ -1,5 +1,6 @@
 #pragma once
 #include "../../../src/nsk_cpp.h"
+#include <filesystem>
 
 
 constexpr int TSPANS = 64;
@@ -25,6 +26,7 @@ struct TensorSpan {
 struct TensorArena { 
     
     std::array<TensorSpan*, TSPANS> cur_span, first_span;
+    int all_allocated=0;
 
     TensorArena();
     void Reset();
@@ -34,9 +36,11 @@ struct TensorArena {
         size = size*sizeof(T);
         int exp = round_up_pow2_exp(size);
         int rsize = 1u << exp;
+
         // std::cout << "alloc size " << size << "\n";
         // std::cout << "alloc exp " << exp << "\n";
         // std::cout << "alloc rsize " << rsize << "\n";
+        // std::cout << "all allocated " << all_allocated << "\n";
         // std::cout << "\n";
         TensorSpan *span = cur_span[exp], *prev_span=nullptr;
         if (span) {
@@ -60,6 +64,7 @@ struct TensorArena {
             span->prev = prev_span;
         }
         cur_span[exp] = span;
+        all_allocated+=size;
         return span->Allocate<T>();
     }
 };

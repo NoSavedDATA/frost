@@ -30,16 +30,20 @@ operation bf16[] bf16_pp_int_offby
 import tensor_gpu
 import tensor_cpu
 import backprop
+import mma_kernel
 import optim
-import ops
 import warp
-#import mma
+import dim_utils
+import ops
+import relu
+import dim_kernels
 
 
 def int nsk_cuda_prebuild()
 	$backprop.backs["add"] = add_backward
 	$backprop.backs["mma"] = mma_backward
 	$backprop.backs["relu"] = relu_backward
-	$backprop.loss_backs["mse"] = mse_backward
-	$backprop.loss_backs["ce"] = ce_backward
+	$backprop.backs["view"] = view_backward
+	$backprop.backs["mse"] = mse_backward
+	$backprop.backs["ce"] = ce_backward
 	return 0

@@ -1,0 +1,93 @@
+gpu tuple<float,int> warpArgmax_float(float val, int id)
+	float shfl_val = shfl_sync(val, 16)
+	int shfl_id = shfl_sync(id, 16)
+	if shfl_val>val
+		val = shfl_val
+		id = shfl_id
+	shfl_val = shfl_sync(val, 8)
+	shfl_id = shfl_sync(id, 8)
+	if shfl_val>val
+		val = shfl_val
+		id = shfl_id
+	shfl_val = shfl_sync(val, 4)
+	shfl_id = shfl_sync(id, 4)
+	if shfl_val>val
+		val = shfl_val
+		id = shfl_id
+	shfl_val = shfl_sync(val, 2)
+	shfl_id = shfl_sync(id, 2)
+	if shfl_val>val
+		val = shfl_val
+		id = shfl_id
+	shfl_val = shfl_sync(val, 1)
+	shfl_id = shfl_sync(id, 1)
+	if shfl_val>val
+		val = shfl_val
+		id = shfl_id
+	return val, id
+
+kernel void argmax_k(float[] y, float[] x, int m, int n)
+	var v = layout<float,m,n>(x)
+	
+	int row = bx*8 + warp
+
+	float maxval = -inf
+	int max_id = lane
+
+	[0..n/|32] j
+		int col = j*32+lane
+		float curval = -inf
+		int cur_id = -1
+		if row<m and col<n
+			curval = v[row, col]
+			cur_id = col
+
+		curval, cur_id = warpArgmax_float(curval, cur_id)
+		if curval>maxval
+			maxval = curval
+			max_id = cur_id
+	
+	if row<m
+		y[row] = max_id
+
+
+
+def gpu_tensor gpu_tensor_argmax(gpu_tensor x, int dim=-1)
+	int m, n
+	array<int> new_dims
+	new_dims, m, n = get_reduced_dims(x.dims)
+	gpu_tensor ret = new gpu_tensor(new_dims, "zeros")
+	launch [m/|8] [256] argmax_k(ret.ptr offby 0, x.ptr offby 0, m, n)
+	return ret
+
+
+
+
+
+
+kernel void mean_kernel(float[] y, float[] x, int m, int n)
+	var v = layout<float,m,n>(x)
+	
+	int row = bx*8 + warp
+	float sum = 0
+	[0..n/|32] i
+		float x_i = 0	
+		int col = i*32 + lane
+		if row<m and col<n
+			x_i = v[row, col]
+		sum += warpSum(x_i)
+
+	if row<m
+		y[row] = sum / n
+		
+
+def gpu_tensor gpu_tensor_mean(gpu_tensor x, int dim=-1)
+	int m, n
+	array<int> new_dims
+	new_dims, m, n = get_reduced_dims(x.dims)
+	gpu_tensor ret = new gpu_tensor(new_dims, "zeros")
+	launch [m/|8] [256] mean_kernel(ret.ptr offby 0, x.ptr offby 0, m, n)
+	return ret
+
+
+

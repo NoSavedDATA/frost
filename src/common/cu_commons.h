@@ -64,8 +64,13 @@ float* make_ones_float(size_t N);
 float* make_min_float(size_t N); 
 
 float* make_xavier_uniform_float(size_t N, int fan_in, int fan_out); 
-
+float* make_xavier_uniform_float_relu(size_t N, int fan_in, int fan_out); 
+float* make_xavier_uniform_float_tanh(size_t N, int fan_in, int fan_out); 
 float* make_xavier_uniform_float_fixed(size_t N, int fan_in, int fan_out, int seed);
+
+float* make_kaiming_uniform_float(size_t N, int fan_in, int fan_out); 
+float* make_kaiming_relu_uniform_float(size_t N, int fan_in, int fan_out); 
+
 
 
 uint16_t* make_random_bf16_uniform(size_t N);
@@ -88,9 +93,6 @@ float *make_N_orthogonals(int N, size_t rows, size_t cols);
 
 
 
-float* make_xavier_uniform_float_relu(size_t N, int fan_in, int fan_out); 
-
-float* make_xavier_uniform_float_tanh(size_t N, int fan_in, int fan_out); 
 
 
 

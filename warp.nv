@@ -1,1 +1,22 @@
-
+gpu float warpSum(float val)
+	val += shfl_sync(val, 16)
+	val += shfl_sync(val, 8)
+	val += shfl_sync(val, 4)
+	val += shfl_sync(val, 2)
+	val += shfl_sync(val, 1)
+	return val
+gpu int warpSum(int val)
+	val += shfl_sync(val, 16)
+	val += shfl_sync(val, 8)
+	val += shfl_sync(val, 4)
+	val += shfl_sync(val, 2)
+	val += shfl_sync(val, 1)
+	return val
+	
+gpu float warpMax(float val)
+	val = max(val, shfl_sync(val, 16))
+	val = max(val, shfl_sync(val, 8))
+	val = max(val, shfl_sync(val, 4))
+	val = max(val, shfl_sync(val, 2))
+	val = max(val, shfl_sync(val, 1))
+	return val

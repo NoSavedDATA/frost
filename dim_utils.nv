@@ -1,0 +1,13 @@
+def tuple<array<int>,int,int> get_reduced_dims(array<int> dims)
+	int m, n
+	array<int> new_dims
+	if dims.size()==1
+		m = 1
+		n = dims[0]
+		new_dims = [1]
+	else
+		new_dims = dims[:-1]
+		m = new_dims reduce *
+		n = dims[-1]
+
+	return new_dims, m, n

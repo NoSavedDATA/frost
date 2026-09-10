@@ -22,8 +22,10 @@ void TensorArena::Reset() {
             span->free_idx=0;
             head = span;
             span=span->prev;
-            if (j++>10)
+            if (j++>99999) {
+                std::cout << "TArena POST J>10" << "\n";
                 std::exit(0);
+            }
         }
         cur_span[i] = head;
     }
