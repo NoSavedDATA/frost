@@ -5,5 +5,5 @@ Neve docs:
 Documentation: [https://neve-lang.dev](https://neve-lang.dev)
 
 <div align="center">
-  <img src="assets/frost.jpeg" alt="Logo" width="260" height="260">
+  <img src="assets/frost.jpeg" alt="Logo" width="460" height="460">
 </div>
