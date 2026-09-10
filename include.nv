@@ -30,7 +30,6 @@ operation bf16[] bf16_pp_int_offby
 import tensor_gpu
 import tensor_cpu
 import backprop
-import mma_kernel
 import optim
 import warp
 import dim_utils

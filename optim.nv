@@ -1,13 +1,13 @@
-class SGD
-	float lr
-	ctor(float lr)
-		self.lr = lr
-	def float step()
-		for param in $optim_info.params
-			sgd_k(param.ptr, param.d, self.lr, param.dims_prod)
-			param.d=nil
-		$optim_info.params.clear()
-		tarena_reset()
+#class SGD
+#	float lr
+#	ctor(float lr)
+#		self.lr = lr
+#	def float step()
+#		for param in $optim_info.params
+#			sgd_k(param.ptr, param.d, self.lr, param.dims_prod)
+#			param.d=nil
+#		$optim_info.params.clear()
+#		tarena_reset()
 
 
 kernel void AdamW_k(float[] param, float[] d, float[] m, float[] v,

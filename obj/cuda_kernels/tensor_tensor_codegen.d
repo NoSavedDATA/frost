@@ -104,118 +104,47 @@ obj/cuda_kernels/tensor_tensor_codegen.o: \
   src/cuda_kernels/../common/cu_commons.h \
   src/cuda_kernels/../cuda_threads/include.h \
   src/cuda_kernels/../cuda_threads/threads.h \
-  src/cuda_kernels/../mma/general.h \
-  src/cuda_kernels/../mma/../frost/include.h \
-  src/cuda_kernels/../mma/../frost/fragments/include.h \
-  src/cuda_kernels/../mma/../frost/fragments/frag_to_smem.h \
-  src/cuda_kernels/../mma/../frost/fragments/inlines.h \
-  src/cuda_kernels/../mma/../frost/fragments/../smem/include.h \
-  src/cuda_kernels/../mma/../frost/fragments/../smem/inlines.cu \
-  src/cuda_kernels/../mma/../frost/fragments/../smem/gmem_to_smem.h \
-  src/cuda_kernels/../mma/../frost/fragments/smem_to_frag.cuh \
-  src/cuda_kernels/../mma/../frost/smem/include.h \
-  src/cuda_kernels/../mma/../frost/structs/include.h \
-  src/cuda_kernels/../mma/../frost/structs/smem_loads/include.h \
-  src/cuda_kernels/../mma/../frost/structs/smem_loads/indexed.h \
-  src/cuda_kernels/../mma/../frost/structs/smem_loads/../../smem/include.h \
-  src/cuda_kernels/../mma/../frost/structs/smem_loads/../smem_cpasync_loader.h \
-  src/cuda_kernels/../mma/../frost/structs/smem_loads/../wmma_indexes.h \
-  src/cuda_kernels/../mma/../frost/structs/smem_loads/../fp16_wmma_frags.h \
-  src/cuda_kernels/../mma/../frost/structs/smem_loads/../i8_wmma_frags.h \
-  src/cuda_kernels/../mma/../frost/structs/smem_loads/standard.h \
-  src/cuda_kernels/../mma/../frost/structs/smem_loads/transposed.h \
-  src/cuda_kernels/../mma/../frost/structs/smem_loads/transposed_index.h \
-  src/cuda_kernels/../mma/../frost/structs/smem_stores/include.h \
-  src/cuda_kernels/../mma/../frost/structs/smem_stores/i8mma.h \
-  src/cuda_kernels/../mma/../frost/structs/fp16_wmma_frags.h \
-  src/cuda_kernels/../mma/../frost/structs/i8_wmma_frags.h \
-  src/cuda_kernels/../mma/../frost/structs/smem_cpasync_loader.h \
-  src/cuda_kernels/../mma/../frost/structs/smem_loader.h \
-  src/cuda_kernels/../mma/../frost/structs/wmma_indexes.h \
-  src/cuda_kernels/../mma/../frost/quantize/include.h \
-  src/cuda_kernels/../mma/../frost/quantize/call.h \
-  src/cuda_kernels/../mma/../frost/quantize/../minimal_tensor.h \
-  src/cuda_kernels/../mma/../frost/quantize/../../../../../src/nsk_cpp.h \
-  src/cuda_kernels/../mma/../frost/quantize/../pool/include.h \
-  src/cuda_kernels/../mma/../frost/quantize/../pool/pool_i8.h \
-  src/cuda_kernels/../mma/../frost/quantize/../pool/../../../../../src/nsk_cpp.h \
-  src/cuda_kernels/../mma/../frost/quantize/../pool/pool_i32.h \
-  src/cuda_kernels/../mma/../frost/quantize/../pool/pool.h \
-  src/cuda_kernels/../mma/../frost/quantize/quantize_f32_i4.h \
-  src/cuda_kernels/../mma/../frost/quantize/quantize_f32_i8.h \
-  src/cuda_kernels/../mma/../frost/quantize/quantize.cuh \
-  src/cuda_kernels/../mma/../frost/pool/include.h \
-  src/cuda_kernels/../mma/../frost/transpose/include.h \
-  src/cuda_kernels/../mma/../frost/transpose/call.h \
-  src/cuda_kernels/../mma/../frost/transpose/transpose_kernel.h \
-  src/cuda_kernels/../mma/../frost/warp_ops/include.h \
-  src/cuda_kernels/../mma/../frost/warp_ops/max.h \
-  src/cuda_kernels/../mma/../frost/wmma/include.h \
-  src/cuda_kernels/../mma/../frost/wmma/i4/include.h \
-  src/cuda_kernels/../mma/../frost/wmma/i4/i4_16x16x16_mma.h \
-  src/cuda_kernels/../mma/../frost/wmma/i4/../../structs/i8_wmma_frags.h \
-  src/cuda_kernels/../mma/../frost/wmma/i4/../../math/divs.h \
-  src/cuda_kernels/../mma/../frost/wmma/i4/ptx.h \
-  src/cuda_kernels/../mma/../frost/wmma/i8/include.h \
-  src/cuda_kernels/../mma/../frost/wmma/i8/i8_16x16x16_dx.h \
-  src/cuda_kernels/../mma/../frost/wmma/i8/../../structs/i8_wmma_frags.h \
-  src/cuda_kernels/../mma/../frost/wmma/i8/i8_16x16x16_warp_tile.h \
-  src/cuda_kernels/../mma/../frost/wmma/i8/ptx.h \
-  src/cuda_kernels/../mma/../frost/wmma/i8/i8_16x16x16_dw.h \
-  src/cuda_kernels/../mma/../frost/wmma/i8/i8_16x16x16_mma.h \
-  src/cuda_kernels/../mma/../frost/wmma/i8/../../math/divs.h \
-  src/cuda_kernels/../mma/../frost/wmma/i8/i8_16x16x16_warp_tile_mma.h \
-  src/cuda_kernels/../mma/../frost/wmma/i8/i8_16x16x16.h \
-  src/cuda_kernels/../mma/../frost/wmma/indexed/include.h \
-  src/cuda_kernels/../mma/../frost/wmma/indexed/fp16_16x16x16_dw_L_index.h \
-  src/cuda_kernels/../mma/../frost/wmma/indexed/../../structs/fp16_wmma_frags.h \
-  src/cuda_kernels/../mma/../frost/wmma/indexed/../fp16_16x16x16_warp_tile.h \
-  src/cuda_kernels/../mma/../frost/wmma/indexed/../ptx.h \
-  src/cuda_kernels/../mma/../frost/wmma/indexed/fp16_16x16x16_L_index.h \
-  src/cuda_kernels/../mma/../frost/wmma/fp16_16x16x16_dx.h \
-  src/cuda_kernels/../mma/../frost/wmma/../structs/fp16_wmma_frags.h \
-  src/cuda_kernels/../mma/../frost/wmma/fp16_16x16x16_warp_tile.h \
-  src/cuda_kernels/../mma/../frost/wmma/fp16_16x16x16_dw.h \
-  src/cuda_kernels/../mma/../frost/wmma/fp16_16x16x16.h \
-  src/cuda_kernels/../mma/../frost/wmma/ptx.h \
-  src/cuda_kernels/../mma/../frost/minimal_tensor.h \
-  src/cuda_kernels/../mma/utils.h src/cuda_kernels/../mma/util.h \
-  src/cuda_kernels/../mma/util_ptx.cu \
-  src/cuda_kernels/../frost/pool/include.h \
+  src/cuda_kernels/../mma/general.h /nsk/lib/eigen3/../frost/include.h \
+  /nsk/lib/eigen3/../frost/src/include.h \
+  /nsk/lib/eigen3/../frost/src/codegen/include.h \
+  /nsk/lib/eigen3/../frost/src/codegen/codegen.h \
+  /nsk/lib/eigen3/../frost/src/codegen/ops.h \
+  /nsk/lib/eigen3/../frost/src/common/include.h \
+  /nsk/lib/eigen3/../frost/src/common/cu_commons.h \
+  /nsk/lib/eigen3/../frost/src/common/extension_functions.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/include.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/../../../../src/nsk_cpp.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/activation_functions/include.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/activation_functions/activation_kernels.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/image_processing/include.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/image_processing/kernels.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/include.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/classification_kernels.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/classification.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/../../../../../src/nsk_cpp.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/regression_kernels.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/regression.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/calculate_grids.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/handles.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/tensor_tensor_codegen.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/tensor_tensor_kernels.h \
+  /nsk/lib/eigen3/../frost/src/cuda_threads/include.h \
+  /nsk/lib/eigen3/../frost/src/data_types/include.h \
+  /nsk/lib/eigen3/../frost/src/data_types/tensor.h \
+  /nsk/lib/eigen3/../frost/src/mma/include.h \
+  /nsk/lib/eigen3/../frost/src/mma/general.h \
+  /nsk/lib/eigen3/../frost/src/pool/include.h \
+  /nsk/lib/eigen3/../frost/src/processing/include.h \
+  /nsk/lib/eigen3/../frost/src/processing/img.h \
+  /nsk/lib/eigen3/../frost/src/processing/../../../../src/nsk_cpp.h \
+  /nsk/lib/eigen3/../frost/src/tensor/include.h \
+  /nsk/lib/eigen3/../frost/src/tensor/../../../../src/nsk_cpp.h \
+  /nsk/lib/eigen3/../frost/src/tensor/print.h \
+  /nsk/lib/eigen3/../frost/src/tensor/save.h \
+  /nsk/lib/eigen3/../frost/src/tensor/tensor_dim_functions.h \
   src/cuda_kernels/../tensor/include.h \
-  src/cuda_kernels/../tensor/../../../../src/nsk_cpp.h \
-  src/cuda_kernels/../tensor/print.h src/cuda_kernels/../tensor/save.h \
-  src/cuda_kernels/../tensor/tensor_dim_functions.h \
   src/cuda_kernels/activation_functions/activation_kernels.h \
-  src/cuda_kernels/include.h src/cuda_kernels/../../../../src/nsk_cpp.h \
-  src/cuda_kernels/activation_functions/include.h \
-  src/cuda_kernels/activation_functions/activation_codegen.h \
-  src/cuda_kernels/dropout/include.h src/cuda_kernels/dropout/dropout.h \
-  src/cuda_kernels/dropout/dropout_kernels.h \
-  src/cuda_kernels/image_processing/include.h \
-  src/cuda_kernels/image_processing/codegen.h \
-  src/cuda_kernels/image_processing/kernels.h \
-  src/cuda_kernels/loss_functions/include.h \
-  src/cuda_kernels/loss_functions/classification_kernels.h \
-  src/cuda_kernels/loss_functions/classification.h \
-  src/cuda_kernels/loss_functions/../../../../../src/nsk_cpp.h \
-  src/cuda_kernels/loss_functions/regression_kernels.h \
-  src/cuda_kernels/loss_functions/regression.h \
-  src/cuda_kernels/type_cast/include.h \
-  src/cuda_kernels/type_cast/kernel.h \
-  src/cuda_kernels/type_cast/codegen.h \
-  src/cuda_kernels/atomic_kernels.cu src/cuda_kernels/calculate_grids.h \
-  src/cuda_kernels/dim.h src/cuda_kernels/dim_kernels.h \
-  src/cuda_kernels/elementwise_codegen.h \
-  src/cuda_kernels/elementwise_kernels.h \
-  src/cuda_kernels/elementwise_kernels_inline.cu \
-  src/cuda_kernels/handles.h src/cuda_kernels/min_max_sample.h \
-  src/cuda_kernels/min_max_sample_kernels.h src/cuda_kernels/rl.h \
-  src/cuda_kernels/rl_kernels.h src/cuda_kernels/tensor_scalar_codegen.h \
-  src/cuda_kernels/tensor_scalar_kernels.h \
-  src/cuda_kernels/tensor_scalar_kernels_inline.cu \
-  src/cuda_kernels/tensor_tensor_codegen.h \
-  src/cuda_kernels/tensor_tensor_kernels.h src/cuda_kernels/transpose.h
+  src/cuda_kernels/include.h
 src/../../../src/nsk_cpp.h:
 src/../../../src/runtime/include.h:
 src/../../../src/runtime/char_pool/include.h:
@@ -323,124 +252,44 @@ src/cuda_kernels/../common/cu_commons.h:
 src/cuda_kernels/../cuda_threads/include.h:
 src/cuda_kernels/../cuda_threads/threads.h:
 src/cuda_kernels/../mma/general.h:
-src/cuda_kernels/../mma/../frost/include.h:
-src/cuda_kernels/../mma/../frost/fragments/include.h:
-src/cuda_kernels/../mma/../frost/fragments/frag_to_smem.h:
-src/cuda_kernels/../mma/../frost/fragments/inlines.h:
-src/cuda_kernels/../mma/../frost/fragments/../smem/include.h:
-src/cuda_kernels/../mma/../frost/fragments/../smem/inlines.cu:
-src/cuda_kernels/../mma/../frost/fragments/../smem/gmem_to_smem.h:
-src/cuda_kernels/../mma/../frost/fragments/smem_to_frag.cuh:
-src/cuda_kernels/../mma/../frost/smem/include.h:
-src/cuda_kernels/../mma/../frost/structs/include.h:
-src/cuda_kernels/../mma/../frost/structs/smem_loads/include.h:
-src/cuda_kernels/../mma/../frost/structs/smem_loads/indexed.h:
-src/cuda_kernels/../mma/../frost/structs/smem_loads/../../smem/include.h:
-src/cuda_kernels/../mma/../frost/structs/smem_loads/../smem_cpasync_loader.h:
-src/cuda_kernels/../mma/../frost/structs/smem_loads/../wmma_indexes.h:
-src/cuda_kernels/../mma/../frost/structs/smem_loads/../fp16_wmma_frags.h:
-src/cuda_kernels/../mma/../frost/structs/smem_loads/../i8_wmma_frags.h:
-src/cuda_kernels/../mma/../frost/structs/smem_loads/standard.h:
-src/cuda_kernels/../mma/../frost/structs/smem_loads/transposed.h:
-src/cuda_kernels/../mma/../frost/structs/smem_loads/transposed_index.h:
-src/cuda_kernels/../mma/../frost/structs/smem_stores/include.h:
-src/cuda_kernels/../mma/../frost/structs/smem_stores/i8mma.h:
-src/cuda_kernels/../mma/../frost/structs/fp16_wmma_frags.h:
-src/cuda_kernels/../mma/../frost/structs/i8_wmma_frags.h:
-src/cuda_kernels/../mma/../frost/structs/smem_cpasync_loader.h:
-src/cuda_kernels/../mma/../frost/structs/smem_loader.h:
-src/cuda_kernels/../mma/../frost/structs/wmma_indexes.h:
-src/cuda_kernels/../mma/../frost/quantize/include.h:
-src/cuda_kernels/../mma/../frost/quantize/call.h:
-src/cuda_kernels/../mma/../frost/quantize/../minimal_tensor.h:
-src/cuda_kernels/../mma/../frost/quantize/../../../../../src/nsk_cpp.h:
-src/cuda_kernels/../mma/../frost/quantize/../pool/include.h:
-src/cuda_kernels/../mma/../frost/quantize/../pool/pool_i8.h:
-src/cuda_kernels/../mma/../frost/quantize/../pool/../../../../../src/nsk_cpp.h:
-src/cuda_kernels/../mma/../frost/quantize/../pool/pool_i32.h:
-src/cuda_kernels/../mma/../frost/quantize/../pool/pool.h:
-src/cuda_kernels/../mma/../frost/quantize/quantize_f32_i4.h:
-src/cuda_kernels/../mma/../frost/quantize/quantize_f32_i8.h:
-src/cuda_kernels/../mma/../frost/quantize/quantize.cuh:
-src/cuda_kernels/../mma/../frost/pool/include.h:
-src/cuda_kernels/../mma/../frost/transpose/include.h:
-src/cuda_kernels/../mma/../frost/transpose/call.h:
-src/cuda_kernels/../mma/../frost/transpose/transpose_kernel.h:
-src/cuda_kernels/../mma/../frost/warp_ops/include.h:
-src/cuda_kernels/../mma/../frost/warp_ops/max.h:
-src/cuda_kernels/../mma/../frost/wmma/include.h:
-src/cuda_kernels/../mma/../frost/wmma/i4/include.h:
-src/cuda_kernels/../mma/../frost/wmma/i4/i4_16x16x16_mma.h:
-src/cuda_kernels/../mma/../frost/wmma/i4/../../structs/i8_wmma_frags.h:
-src/cuda_kernels/../mma/../frost/wmma/i4/../../math/divs.h:
-src/cuda_kernels/../mma/../frost/wmma/i4/ptx.h:
-src/cuda_kernels/../mma/../frost/wmma/i8/include.h:
-src/cuda_kernels/../mma/../frost/wmma/i8/i8_16x16x16_dx.h:
-src/cuda_kernels/../mma/../frost/wmma/i8/../../structs/i8_wmma_frags.h:
-src/cuda_kernels/../mma/../frost/wmma/i8/i8_16x16x16_warp_tile.h:
-src/cuda_kernels/../mma/../frost/wmma/i8/ptx.h:
-src/cuda_kernels/../mma/../frost/wmma/i8/i8_16x16x16_dw.h:
-src/cuda_kernels/../mma/../frost/wmma/i8/i8_16x16x16_mma.h:
-src/cuda_kernels/../mma/../frost/wmma/i8/../../math/divs.h:
-src/cuda_kernels/../mma/../frost/wmma/i8/i8_16x16x16_warp_tile_mma.h:
-src/cuda_kernels/../mma/../frost/wmma/i8/i8_16x16x16.h:
-src/cuda_kernels/../mma/../frost/wmma/indexed/include.h:
-src/cuda_kernels/../mma/../frost/wmma/indexed/fp16_16x16x16_dw_L_index.h:
-src/cuda_kernels/../mma/../frost/wmma/indexed/../../structs/fp16_wmma_frags.h:
-src/cuda_kernels/../mma/../frost/wmma/indexed/../fp16_16x16x16_warp_tile.h:
-src/cuda_kernels/../mma/../frost/wmma/indexed/../ptx.h:
-src/cuda_kernels/../mma/../frost/wmma/indexed/fp16_16x16x16_L_index.h:
-src/cuda_kernels/../mma/../frost/wmma/fp16_16x16x16_dx.h:
-src/cuda_kernels/../mma/../frost/wmma/../structs/fp16_wmma_frags.h:
-src/cuda_kernels/../mma/../frost/wmma/fp16_16x16x16_warp_tile.h:
-src/cuda_kernels/../mma/../frost/wmma/fp16_16x16x16_dw.h:
-src/cuda_kernels/../mma/../frost/wmma/fp16_16x16x16.h:
-src/cuda_kernels/../mma/../frost/wmma/ptx.h:
-src/cuda_kernels/../mma/../frost/minimal_tensor.h:
-src/cuda_kernels/../mma/utils.h:
-src/cuda_kernels/../mma/util.h:
-src/cuda_kernels/../mma/util_ptx.cu:
-src/cuda_kernels/../frost/pool/include.h:
+/nsk/lib/eigen3/../frost/include.h:
+/nsk/lib/eigen3/../frost/src/include.h:
+/nsk/lib/eigen3/../frost/src/codegen/include.h:
+/nsk/lib/eigen3/../frost/src/codegen/codegen.h:
+/nsk/lib/eigen3/../frost/src/codegen/ops.h:
+/nsk/lib/eigen3/../frost/src/common/include.h:
+/nsk/lib/eigen3/../frost/src/common/cu_commons.h:
+/nsk/lib/eigen3/../frost/src/common/extension_functions.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/include.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/../../../../src/nsk_cpp.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/activation_functions/include.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/activation_functions/activation_kernels.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/image_processing/include.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/image_processing/kernels.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/include.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/classification_kernels.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/classification.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/../../../../../src/nsk_cpp.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/regression_kernels.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/regression.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/calculate_grids.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/handles.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/tensor_tensor_codegen.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/tensor_tensor_kernels.h:
+/nsk/lib/eigen3/../frost/src/cuda_threads/include.h:
+/nsk/lib/eigen3/../frost/src/data_types/include.h:
+/nsk/lib/eigen3/../frost/src/data_types/tensor.h:
+/nsk/lib/eigen3/../frost/src/mma/include.h:
+/nsk/lib/eigen3/../frost/src/mma/general.h:
+/nsk/lib/eigen3/../frost/src/pool/include.h:
+/nsk/lib/eigen3/../frost/src/processing/include.h:
+/nsk/lib/eigen3/../frost/src/processing/img.h:
+/nsk/lib/eigen3/../frost/src/processing/../../../../src/nsk_cpp.h:
+/nsk/lib/eigen3/../frost/src/tensor/include.h:
+/nsk/lib/eigen3/../frost/src/tensor/../../../../src/nsk_cpp.h:
+/nsk/lib/eigen3/../frost/src/tensor/print.h:
+/nsk/lib/eigen3/../frost/src/tensor/save.h:
+/nsk/lib/eigen3/../frost/src/tensor/tensor_dim_functions.h:
 src/cuda_kernels/../tensor/include.h:
-src/cuda_kernels/../tensor/../../../../src/nsk_cpp.h:
-src/cuda_kernels/../tensor/print.h:
-src/cuda_kernels/../tensor/save.h:
-src/cuda_kernels/../tensor/tensor_dim_functions.h:
 src/cuda_kernels/activation_functions/activation_kernels.h:
 src/cuda_kernels/include.h:
-src/cuda_kernels/../../../../src/nsk_cpp.h:
-src/cuda_kernels/activation_functions/include.h:
-src/cuda_kernels/activation_functions/activation_codegen.h:
-src/cuda_kernels/dropout/include.h:
-src/cuda_kernels/dropout/dropout.h:
-src/cuda_kernels/dropout/dropout_kernels.h:
-src/cuda_kernels/image_processing/include.h:
-src/cuda_kernels/image_processing/codegen.h:
-src/cuda_kernels/image_processing/kernels.h:
-src/cuda_kernels/loss_functions/include.h:
-src/cuda_kernels/loss_functions/classification_kernels.h:
-src/cuda_kernels/loss_functions/classification.h:
-src/cuda_kernels/loss_functions/../../../../../src/nsk_cpp.h:
-src/cuda_kernels/loss_functions/regression_kernels.h:
-src/cuda_kernels/loss_functions/regression.h:
-src/cuda_kernels/type_cast/include.h:
-src/cuda_kernels/type_cast/kernel.h:
-src/cuda_kernels/type_cast/codegen.h:
-src/cuda_kernels/atomic_kernels.cu:
-src/cuda_kernels/calculate_grids.h:
-src/cuda_kernels/dim.h:
-src/cuda_kernels/dim_kernels.h:
-src/cuda_kernels/elementwise_codegen.h:
-src/cuda_kernels/elementwise_kernels.h:
-src/cuda_kernels/elementwise_kernels_inline.cu:
-src/cuda_kernels/handles.h:
-src/cuda_kernels/min_max_sample.h:
-src/cuda_kernels/min_max_sample_kernels.h:
-src/cuda_kernels/rl.h:
-src/cuda_kernels/rl_kernels.h:
-src/cuda_kernels/tensor_scalar_codegen.h:
-src/cuda_kernels/tensor_scalar_kernels.h:
-src/cuda_kernels/tensor_scalar_kernels_inline.cu:
-src/cuda_kernels/tensor_tensor_codegen.h:
-src/cuda_kernels/tensor_tensor_kernels.h:
-src/cuda_kernels/transpose.h:

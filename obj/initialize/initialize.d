@@ -105,12 +105,7 @@ obj/initialize/initialize.o: src/initialize/initialize.cu \
   src/initialize/../cuda_kernels/../../../../src/nsk_cpp.h \
   src/initialize/../cuda_kernels/activation_functions/include.h \
   src/initialize/../cuda_kernels/activation_functions/activation_kernels.h \
-  src/initialize/../cuda_kernels/activation_functions/activation_codegen.h \
-  src/initialize/../cuda_kernels/dropout/include.h \
-  src/initialize/../cuda_kernels/dropout/dropout.h \
-  src/initialize/../cuda_kernels/dropout/dropout_kernels.h \
   src/initialize/../cuda_kernels/image_processing/include.h \
-  src/initialize/../cuda_kernels/image_processing/codegen.h \
   src/initialize/../cuda_kernels/image_processing/kernels.h \
   src/initialize/../cuda_kernels/loss_functions/include.h \
   src/initialize/../cuda_kernels/loss_functions/classification_kernels.h \
@@ -118,32 +113,10 @@ obj/initialize/initialize.o: src/initialize/initialize.cu \
   src/initialize/../cuda_kernels/loss_functions/../../../../../src/nsk_cpp.h \
   src/initialize/../cuda_kernels/loss_functions/regression_kernels.h \
   src/initialize/../cuda_kernels/loss_functions/regression.h \
-  src/initialize/../cuda_kernels/type_cast/include.h \
-  src/initialize/../cuda_kernels/type_cast/kernel.h \
-  src/initialize/../cuda_kernels/type_cast/codegen.h \
-  src/initialize/../cuda_kernels/atomic_kernels.cu \
   src/initialize/../cuda_kernels/calculate_grids.h \
-  src/initialize/../cuda_kernels/dim.h \
-  src/initialize/../cuda_kernels/../tensor/include.h \
-  src/initialize/../cuda_kernels/../tensor/../../../../src/nsk_cpp.h \
-  src/initialize/../cuda_kernels/../tensor/print.h \
-  src/initialize/../cuda_kernels/../tensor/save.h \
-  src/initialize/../cuda_kernels/../tensor/tensor_dim_functions.h \
-  src/initialize/../cuda_kernels/dim_kernels.h \
-  src/initialize/../cuda_kernels/elementwise_codegen.h \
-  src/initialize/../cuda_kernels/elementwise_kernels.h \
-  src/initialize/../cuda_kernels/elementwise_kernels_inline.cu \
   src/initialize/../cuda_kernels/handles.h \
-  src/initialize/../cuda_kernels/min_max_sample.h \
-  src/initialize/../cuda_kernels/min_max_sample_kernels.h \
-  src/initialize/../cuda_kernels/rl.h \
-  src/initialize/../cuda_kernels/rl_kernels.h \
-  src/initialize/../cuda_kernels/tensor_scalar_codegen.h \
-  src/initialize/../cuda_kernels/tensor_scalar_kernels.h \
-  src/initialize/../cuda_kernels/tensor_scalar_kernels_inline.cu \
   src/initialize/../cuda_kernels/tensor_tensor_codegen.h \
   src/initialize/../cuda_kernels/tensor_tensor_kernels.h \
-  src/initialize/../cuda_kernels/transpose.h \
   src/initialize/../cuda_threads/include.h \
   src/initialize/../cuda_threads/threads.h \
   src/initialize/../common/include.h \
@@ -549,12 +522,7 @@ src/initialize/../cuda_kernels/include.h:
 src/initialize/../cuda_kernels/../../../../src/nsk_cpp.h:
 src/initialize/../cuda_kernels/activation_functions/include.h:
 src/initialize/../cuda_kernels/activation_functions/activation_kernels.h:
-src/initialize/../cuda_kernels/activation_functions/activation_codegen.h:
-src/initialize/../cuda_kernels/dropout/include.h:
-src/initialize/../cuda_kernels/dropout/dropout.h:
-src/initialize/../cuda_kernels/dropout/dropout_kernels.h:
 src/initialize/../cuda_kernels/image_processing/include.h:
-src/initialize/../cuda_kernels/image_processing/codegen.h:
 src/initialize/../cuda_kernels/image_processing/kernels.h:
 src/initialize/../cuda_kernels/loss_functions/include.h:
 src/initialize/../cuda_kernels/loss_functions/classification_kernels.h:
@@ -562,32 +530,10 @@ src/initialize/../cuda_kernels/loss_functions/classification.h:
 src/initialize/../cuda_kernels/loss_functions/../../../../../src/nsk_cpp.h:
 src/initialize/../cuda_kernels/loss_functions/regression_kernels.h:
 src/initialize/../cuda_kernels/loss_functions/regression.h:
-src/initialize/../cuda_kernels/type_cast/include.h:
-src/initialize/../cuda_kernels/type_cast/kernel.h:
-src/initialize/../cuda_kernels/type_cast/codegen.h:
-src/initialize/../cuda_kernels/atomic_kernels.cu:
 src/initialize/../cuda_kernels/calculate_grids.h:
-src/initialize/../cuda_kernels/dim.h:
-src/initialize/../cuda_kernels/../tensor/include.h:
-src/initialize/../cuda_kernels/../tensor/../../../../src/nsk_cpp.h:
-src/initialize/../cuda_kernels/../tensor/print.h:
-src/initialize/../cuda_kernels/../tensor/save.h:
-src/initialize/../cuda_kernels/../tensor/tensor_dim_functions.h:
-src/initialize/../cuda_kernels/dim_kernels.h:
-src/initialize/../cuda_kernels/elementwise_codegen.h:
-src/initialize/../cuda_kernels/elementwise_kernels.h:
-src/initialize/../cuda_kernels/elementwise_kernels_inline.cu:
 src/initialize/../cuda_kernels/handles.h:
-src/initialize/../cuda_kernels/min_max_sample.h:
-src/initialize/../cuda_kernels/min_max_sample_kernels.h:
-src/initialize/../cuda_kernels/rl.h:
-src/initialize/../cuda_kernels/rl_kernels.h:
-src/initialize/../cuda_kernels/tensor_scalar_codegen.h:
-src/initialize/../cuda_kernels/tensor_scalar_kernels.h:
-src/initialize/../cuda_kernels/tensor_scalar_kernels_inline.cu:
 src/initialize/../cuda_kernels/tensor_tensor_codegen.h:
 src/initialize/../cuda_kernels/tensor_tensor_kernels.h:
-src/initialize/../cuda_kernels/transpose.h:
 src/initialize/../cuda_threads/include.h:
 src/initialize/../cuda_threads/threads.h:
 src/initialize/../common/include.h:

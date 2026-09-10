@@ -103,73 +103,43 @@ obj/mma/general.o: src/mma/general.cu src/mma/../common/cu_commons.h \
   src/mma/../tensor/../../../../src/runtime/threads/include.h \
   src/mma/../tensor/../../../../src/runtime/prebuild/prebuild.h \
   src/mma/../tensor/print.h src/mma/../tensor/save.h \
-  src/mma/../tensor/tensor_dim_functions.h src/mma/utils.h \
-  src/mma/util.h src/mma/util_ptx.cu src/mma/../frost/include.h \
-  src/mma/../frost/fragments/include.h \
-  src/mma/../frost/fragments/frag_to_smem.h \
-  src/mma/../frost/fragments/inlines.h \
-  src/mma/../frost/fragments/../smem/include.h \
-  src/mma/../frost/fragments/../smem/inlines.cu \
-  src/mma/../frost/fragments/../smem/gmem_to_smem.h \
-  src/mma/../frost/fragments/smem_to_frag.cuh \
-  src/mma/../frost/smem/include.h src/mma/../frost/structs/include.h \
-  src/mma/../frost/structs/smem_loads/include.h \
-  src/mma/../frost/structs/smem_loads/indexed.h \
-  src/mma/../frost/structs/smem_loads/../../smem/include.h \
-  src/mma/../frost/structs/smem_loads/../smem_cpasync_loader.h \
-  src/mma/../frost/structs/smem_loads/../wmma_indexes.h \
-  src/mma/../frost/structs/smem_loads/../fp16_wmma_frags.h \
-  src/mma/../frost/structs/smem_loads/../i8_wmma_frags.h \
-  src/mma/../frost/structs/smem_loads/standard.h \
-  src/mma/../frost/structs/smem_loads/transposed.h \
-  src/mma/../frost/structs/smem_loads/transposed_index.h \
-  src/mma/../frost/structs/smem_stores/include.h \
-  src/mma/../frost/structs/smem_stores/i8mma.h \
-  src/mma/../frost/structs/fp16_wmma_frags.h \
-  src/mma/../frost/structs/i8_wmma_frags.h \
-  src/mma/../frost/structs/smem_cpasync_loader.h \
-  src/mma/../frost/structs/smem_loader.h \
-  src/mma/../frost/structs/wmma_indexes.h \
-  src/mma/../frost/quantize/include.h src/mma/../frost/quantize/call.h \
-  src/mma/../frost/quantize/../minimal_tensor.h \
-  src/mma/../frost/quantize/../../../../../src/nsk_cpp.h \
-  src/mma/../frost/quantize/../pool/include.h \
-  src/mma/../frost/quantize/../pool/pool_i8.h \
-  src/mma/../frost/quantize/../pool/../../../../../src/nsk_cpp.h \
-  src/mma/../frost/quantize/../pool/pool_i32.h \
-  src/mma/../frost/quantize/../pool/pool.h \
-  src/mma/../frost/quantize/quantize_f32_i4.h \
-  src/mma/../frost/quantize/quantize_f32_i8.h \
-  src/mma/../frost/quantize/quantize.cuh src/mma/../frost/pool/include.h \
-  src/mma/../frost/transpose/include.h src/mma/../frost/transpose/call.h \
-  src/mma/../frost/transpose/transpose_kernel.h \
-  src/mma/../frost/warp_ops/include.h src/mma/../frost/warp_ops/max.h \
-  src/mma/../frost/wmma/include.h src/mma/../frost/wmma/i4/include.h \
-  src/mma/../frost/wmma/i4/i4_16x16x16_mma.h \
-  src/mma/../frost/wmma/i4/../../structs/i8_wmma_frags.h \
-  src/mma/../frost/wmma/i4/../../math/divs.h \
-  src/mma/../frost/wmma/i4/ptx.h src/mma/../frost/wmma/i8/include.h \
-  src/mma/../frost/wmma/i8/i8_16x16x16_dx.h \
-  src/mma/../frost/wmma/i8/../../structs/i8_wmma_frags.h \
-  src/mma/../frost/wmma/i8/i8_16x16x16_warp_tile.h \
-  src/mma/../frost/wmma/i8/ptx.h \
-  src/mma/../frost/wmma/i8/i8_16x16x16_dw.h \
-  src/mma/../frost/wmma/i8/i8_16x16x16_mma.h \
-  src/mma/../frost/wmma/i8/../../math/divs.h \
-  src/mma/../frost/wmma/i8/i8_16x16x16_warp_tile_mma.h \
-  src/mma/../frost/wmma/i8/i8_16x16x16.h \
-  src/mma/../frost/wmma/indexed/include.h \
-  src/mma/../frost/wmma/indexed/fp16_16x16x16_dw_L_index.h \
-  src/mma/../frost/wmma/indexed/../../structs/fp16_wmma_frags.h \
-  src/mma/../frost/wmma/indexed/../fp16_16x16x16_warp_tile.h \
-  src/mma/../frost/wmma/indexed/../ptx.h \
-  src/mma/../frost/wmma/indexed/fp16_16x16x16_L_index.h \
-  src/mma/../frost/wmma/fp16_16x16x16_dx.h \
-  src/mma/../frost/wmma/../structs/fp16_wmma_frags.h \
-  src/mma/../frost/wmma/fp16_16x16x16_warp_tile.h \
-  src/mma/../frost/wmma/fp16_16x16x16_dw.h \
-  src/mma/../frost/wmma/fp16_16x16x16.h src/mma/../frost/wmma/ptx.h \
-  src/mma/../frost/minimal_tensor.h src/mma/general.h
+  src/mma/../tensor/tensor_dim_functions.h src/mma/general.h \
+  /nsk/lib/eigen3/../frost/include.h \
+  /nsk/lib/eigen3/../frost/src/include.h \
+  /nsk/lib/eigen3/../frost/src/codegen/include.h \
+  /nsk/lib/eigen3/../frost/src/codegen/codegen.h \
+  /nsk/lib/eigen3/../frost/src/codegen/ops.h \
+  /nsk/lib/eigen3/../frost/src/common/include.h \
+  /nsk/lib/eigen3/../frost/src/common/cu_commons.h \
+  /nsk/lib/eigen3/../frost/src/common/extension_functions.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/include.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/../../../../src/nsk_cpp.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/activation_functions/include.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/activation_functions/activation_kernels.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/image_processing/include.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/image_processing/kernels.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/include.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/classification_kernels.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/classification.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/../../../../../src/nsk_cpp.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/regression_kernels.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/regression.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/calculate_grids.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/handles.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/tensor_tensor_codegen.h \
+  /nsk/lib/eigen3/../frost/src/cuda_kernels/tensor_tensor_kernels.h \
+  /nsk/lib/eigen3/../frost/src/cuda_threads/include.h \
+  /nsk/lib/eigen3/../frost/src/data_types/include.h \
+  src/../../../src/nsk_cpp.h \
+  /nsk/lib/eigen3/../frost/src/data_types/tensor.h \
+  /nsk/lib/eigen3/../frost/src/mma/include.h \
+  /nsk/lib/eigen3/../frost/src/mma/general.h \
+  /nsk/lib/eigen3/../frost/src/pool/include.h \
+  /nsk/lib/eigen3/../frost/src/pool/pool.h \
+  /nsk/lib/eigen3/../frost/src/processing/include.h \
+  /nsk/lib/eigen3/../frost/src/processing/img.h \
+  /nsk/lib/eigen3/../frost/src/processing/../../../../src/nsk_cpp.h \
+  /nsk/lib/eigen3/../frost/src/tensor/include.h
 src/mma/../common/cu_commons.h:
 src/mma/../cuda_threads/include.h:
 src/mma/../cuda_threads/threads.h:
@@ -279,81 +249,40 @@ src/mma/../tensor/../../../../src/runtime/prebuild/prebuild.h:
 src/mma/../tensor/print.h:
 src/mma/../tensor/save.h:
 src/mma/../tensor/tensor_dim_functions.h:
-src/mma/utils.h:
-src/mma/util.h:
-src/mma/util_ptx.cu:
-src/mma/../frost/include.h:
-src/mma/../frost/fragments/include.h:
-src/mma/../frost/fragments/frag_to_smem.h:
-src/mma/../frost/fragments/inlines.h:
-src/mma/../frost/fragments/../smem/include.h:
-src/mma/../frost/fragments/../smem/inlines.cu:
-src/mma/../frost/fragments/../smem/gmem_to_smem.h:
-src/mma/../frost/fragments/smem_to_frag.cuh:
-src/mma/../frost/smem/include.h:
-src/mma/../frost/structs/include.h:
-src/mma/../frost/structs/smem_loads/include.h:
-src/mma/../frost/structs/smem_loads/indexed.h:
-src/mma/../frost/structs/smem_loads/../../smem/include.h:
-src/mma/../frost/structs/smem_loads/../smem_cpasync_loader.h:
-src/mma/../frost/structs/smem_loads/../wmma_indexes.h:
-src/mma/../frost/structs/smem_loads/../fp16_wmma_frags.h:
-src/mma/../frost/structs/smem_loads/../i8_wmma_frags.h:
-src/mma/../frost/structs/smem_loads/standard.h:
-src/mma/../frost/structs/smem_loads/transposed.h:
-src/mma/../frost/structs/smem_loads/transposed_index.h:
-src/mma/../frost/structs/smem_stores/include.h:
-src/mma/../frost/structs/smem_stores/i8mma.h:
-src/mma/../frost/structs/fp16_wmma_frags.h:
-src/mma/../frost/structs/i8_wmma_frags.h:
-src/mma/../frost/structs/smem_cpasync_loader.h:
-src/mma/../frost/structs/smem_loader.h:
-src/mma/../frost/structs/wmma_indexes.h:
-src/mma/../frost/quantize/include.h:
-src/mma/../frost/quantize/call.h:
-src/mma/../frost/quantize/../minimal_tensor.h:
-src/mma/../frost/quantize/../../../../../src/nsk_cpp.h:
-src/mma/../frost/quantize/../pool/include.h:
-src/mma/../frost/quantize/../pool/pool_i8.h:
-src/mma/../frost/quantize/../pool/../../../../../src/nsk_cpp.h:
-src/mma/../frost/quantize/../pool/pool_i32.h:
-src/mma/../frost/quantize/../pool/pool.h:
-src/mma/../frost/quantize/quantize_f32_i4.h:
-src/mma/../frost/quantize/quantize_f32_i8.h:
-src/mma/../frost/quantize/quantize.cuh:
-src/mma/../frost/pool/include.h:
-src/mma/../frost/transpose/include.h:
-src/mma/../frost/transpose/call.h:
-src/mma/../frost/transpose/transpose_kernel.h:
-src/mma/../frost/warp_ops/include.h:
-src/mma/../frost/warp_ops/max.h:
-src/mma/../frost/wmma/include.h:
-src/mma/../frost/wmma/i4/include.h:
-src/mma/../frost/wmma/i4/i4_16x16x16_mma.h:
-src/mma/../frost/wmma/i4/../../structs/i8_wmma_frags.h:
-src/mma/../frost/wmma/i4/../../math/divs.h:
-src/mma/../frost/wmma/i4/ptx.h:
-src/mma/../frost/wmma/i8/include.h:
-src/mma/../frost/wmma/i8/i8_16x16x16_dx.h:
-src/mma/../frost/wmma/i8/../../structs/i8_wmma_frags.h:
-src/mma/../frost/wmma/i8/i8_16x16x16_warp_tile.h:
-src/mma/../frost/wmma/i8/ptx.h:
-src/mma/../frost/wmma/i8/i8_16x16x16_dw.h:
-src/mma/../frost/wmma/i8/i8_16x16x16_mma.h:
-src/mma/../frost/wmma/i8/../../math/divs.h:
-src/mma/../frost/wmma/i8/i8_16x16x16_warp_tile_mma.h:
-src/mma/../frost/wmma/i8/i8_16x16x16.h:
-src/mma/../frost/wmma/indexed/include.h:
-src/mma/../frost/wmma/indexed/fp16_16x16x16_dw_L_index.h:
-src/mma/../frost/wmma/indexed/../../structs/fp16_wmma_frags.h:
-src/mma/../frost/wmma/indexed/../fp16_16x16x16_warp_tile.h:
-src/mma/../frost/wmma/indexed/../ptx.h:
-src/mma/../frost/wmma/indexed/fp16_16x16x16_L_index.h:
-src/mma/../frost/wmma/fp16_16x16x16_dx.h:
-src/mma/../frost/wmma/../structs/fp16_wmma_frags.h:
-src/mma/../frost/wmma/fp16_16x16x16_warp_tile.h:
-src/mma/../frost/wmma/fp16_16x16x16_dw.h:
-src/mma/../frost/wmma/fp16_16x16x16.h:
-src/mma/../frost/wmma/ptx.h:
-src/mma/../frost/minimal_tensor.h:
 src/mma/general.h:
+/nsk/lib/eigen3/../frost/include.h:
+/nsk/lib/eigen3/../frost/src/include.h:
+/nsk/lib/eigen3/../frost/src/codegen/include.h:
+/nsk/lib/eigen3/../frost/src/codegen/codegen.h:
+/nsk/lib/eigen3/../frost/src/codegen/ops.h:
+/nsk/lib/eigen3/../frost/src/common/include.h:
+/nsk/lib/eigen3/../frost/src/common/cu_commons.h:
+/nsk/lib/eigen3/../frost/src/common/extension_functions.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/include.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/../../../../src/nsk_cpp.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/activation_functions/include.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/activation_functions/activation_kernels.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/image_processing/include.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/image_processing/kernels.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/include.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/classification_kernels.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/classification.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/../../../../../src/nsk_cpp.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/regression_kernels.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/regression.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/calculate_grids.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/handles.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/tensor_tensor_codegen.h:
+/nsk/lib/eigen3/../frost/src/cuda_kernels/tensor_tensor_kernels.h:
+/nsk/lib/eigen3/../frost/src/cuda_threads/include.h:
+/nsk/lib/eigen3/../frost/src/data_types/include.h:
+src/../../../src/nsk_cpp.h:
+/nsk/lib/eigen3/../frost/src/data_types/tensor.h:
+/nsk/lib/eigen3/../frost/src/mma/include.h:
+/nsk/lib/eigen3/../frost/src/mma/general.h:
+/nsk/lib/eigen3/../frost/src/pool/include.h:
+/nsk/lib/eigen3/../frost/src/pool/pool.h:
+/nsk/lib/eigen3/../frost/src/processing/include.h:
+/nsk/lib/eigen3/../frost/src/processing/img.h:
+/nsk/lib/eigen3/../frost/src/processing/../../../../src/nsk_cpp.h:
+/nsk/lib/eigen3/../frost/src/tensor/include.h:

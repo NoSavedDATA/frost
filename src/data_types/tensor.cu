@@ -10,8 +10,6 @@
 #include "../pool/include.h"
 #include "../common/cu_commons.h"
 #include "../cuda_kernels/calculate_grids.h"
-#include "../cuda_kernels/elementwise_kernels_inline.cu"
-#include "../frost/pool/include.h"
 #include "../tensor/include.h"
 #include "../../src/nsk_cpp.h"
 #include "include.h"

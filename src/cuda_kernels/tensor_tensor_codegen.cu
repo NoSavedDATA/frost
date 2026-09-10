@@ -10,7 +10,6 @@
 #include "../common/cu_commons.h"
 #include "../cuda_threads/include.h"
 #include "../mma/general.h"
-#include "../frost/pool/include.h"
 #include "../tensor/include.h"
 #include "activation_functions/activation_kernels.h"
 #include "include.h"

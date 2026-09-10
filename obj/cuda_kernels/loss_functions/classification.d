@@ -100,11 +100,6 @@ obj/cuda_kernels/loss_functions/classification.o: \
   src/../../../src/runtime/profiler/profiler.h \
   src/../../../src/runtime/threads/include.h \
   src/../../../src/runtime/prebuild/prebuild.h \
-  src/cuda_kernels/loss_functions/../../frost/pool/include.h \
-  src/cuda_kernels/loss_functions/../../frost/pool/pool_i8.h \
-  src/cuda_kernels/loss_functions/../../frost/pool/../../../../../src/nsk_cpp.h \
-  src/cuda_kernels/loss_functions/../../frost/pool/pool_i32.h \
-  src/cuda_kernels/loss_functions/../../frost/pool/pool.h \
   src/cuda_kernels/loss_functions/../../cuda_threads/include.h \
   src/cuda_kernels/loss_functions/../../cuda_threads/threads.h \
   src/cuda_kernels/loss_functions/../../pool/include.h \
@@ -116,9 +111,7 @@ obj/cuda_kernels/loss_functions/classification.o: \
   src/cuda_kernels/loss_functions/../../tensor/tensor_dim_functions.h \
   src/cuda_kernels/loss_functions/../activation_functions/include.h \
   src/cuda_kernels/loss_functions/../activation_functions/activation_kernels.h \
-  src/cuda_kernels/loss_functions/../activation_functions/activation_codegen.h \
   src/cuda_kernels/loss_functions/../calculate_grids.h \
-  src/cuda_kernels/loss_functions/../elementwise_kernels_inline.cu \
   src/cuda_kernels/loss_functions/classification_kernels.h
 src/../../../src/nsk_cpp.h:
 src/../../../src/runtime/include.h:
@@ -221,11 +214,6 @@ src/../../../src/runtime/profiler/include.h:
 src/../../../src/runtime/profiler/profiler.h:
 src/../../../src/runtime/threads/include.h:
 src/../../../src/runtime/prebuild/prebuild.h:
-src/cuda_kernels/loss_functions/../../frost/pool/include.h:
-src/cuda_kernels/loss_functions/../../frost/pool/pool_i8.h:
-src/cuda_kernels/loss_functions/../../frost/pool/../../../../../src/nsk_cpp.h:
-src/cuda_kernels/loss_functions/../../frost/pool/pool_i32.h:
-src/cuda_kernels/loss_functions/../../frost/pool/pool.h:
 src/cuda_kernels/loss_functions/../../cuda_threads/include.h:
 src/cuda_kernels/loss_functions/../../cuda_threads/threads.h:
 src/cuda_kernels/loss_functions/../../pool/include.h:
@@ -237,7 +225,5 @@ src/cuda_kernels/loss_functions/../../tensor/save.h:
 src/cuda_kernels/loss_functions/../../tensor/tensor_dim_functions.h:
 src/cuda_kernels/loss_functions/../activation_functions/include.h:
 src/cuda_kernels/loss_functions/../activation_functions/activation_kernels.h:
-src/cuda_kernels/loss_functions/../activation_functions/activation_codegen.h:
 src/cuda_kernels/loss_functions/../calculate_grids.h:
-src/cuda_kernels/loss_functions/../elementwise_kernels_inline.cu:
 src/cuda_kernels/loss_functions/classification_kernels.h:
