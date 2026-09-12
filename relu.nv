@@ -1,5 +1,5 @@
 kernel void relu_kernel(float[] y, float[] x, int n)
-	int idx = bx*256 + tx
+	int idx = bx*1024 + tx
 	if idx>=n
 		return
 	if x[idx]>0
@@ -8,18 +8,16 @@ kernel void relu_kernel(float[] y, float[] x, int n)
 		y[idx] = 0
 
 kernel void relu_backward_kernel(float[] y, float[] dx, float[] dy, int n)
-	int idx = bx*256 + tx
+	int idx = bx*1024 + tx
 	if idx>=n
 		return
 	if y[idx]>0
-		dx[idx] = dy[idx]
-	else
-		dx[idx] = 0
+		dx[idx] += dy[idx]
 
 
 def gpu_tensor relu(gpu_tensor x)
 	gpu_tensor ret = new gpu_tensor(x.dims, "zeros_pool")
-	launch [x.dims_prod/|256] [256] relu_kernel(
+	launch [x.dims_prod/|1024] [1024] relu_kernel(
 							ret.ptr offby 0, x.ptr offby 0, x.dims_prod)
 
 	ret.shall_prop = x.shall_prop
@@ -29,6 +27,6 @@ def gpu_tensor relu(gpu_tensor x)
 
 def int relu_backward(array<gpu_tensor> inp, array<gpu_tensor> out, any module)
 	var x = inp[0]
-	launch [x.dims_prod/|256] [256] relu_backward_kernel(
+	launch [x.dims_prod/|1024] [1024] relu_backward_kernel(
 							out[0].ptr offby 0, x.getd() offby 0,
 							out[0].getd() offby 0, x.dims_prod)

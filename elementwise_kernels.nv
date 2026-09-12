@@ -1,0 +1,8 @@
+
+
+kernel void set_kernel(float[] x, float val, int n)
+	int idx = bx*256 + tx
+	if idx>=n
+		return
+	x[idx] = val
+

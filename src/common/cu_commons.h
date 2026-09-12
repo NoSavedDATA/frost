@@ -68,8 +68,8 @@ float* make_xavier_uniform_float_relu(size_t N, int fan_in, int fan_out);
 float* make_xavier_uniform_float_tanh(size_t N, int fan_in, int fan_out); 
 float* make_xavier_uniform_float_fixed(size_t N, int fan_in, int fan_out, int seed);
 
-float* make_kaiming_uniform_float(size_t N, int fan_in, int fan_out); 
-float* make_kaiming_relu_uniform_float(size_t N, int fan_in, int fan_out); 
+float* make_kaiming_uniform_float(size_t N, int fan_in, int fan_out, float); 
+float* make_conv_kaiming_float(size_t N, int fan_in, int fan_out, float scale);
 
 
 

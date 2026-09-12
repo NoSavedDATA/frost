@@ -79,8 +79,10 @@ extern "C" Value *float_cpu_cupool(Parser_Struct *parser_struct, Function *TheFu
     Value *dest = callret("pool_alloc_float_pp", {scope_struct, size});
     Builder->CreateStore(dest, ret);
 
+    Value *mainstream_v = callret("get_mainstream", {scope_struct});
     Value *src = Builder->CreateLoad(int8PtrTy, ArgsV[0]);
     call("cudaMemcpy", {dest, src, Builder->CreateIntCast(size,int64Ty,true), const_int(1)});
+    // call("cudaMemcpyAsync", {dest, src, Builder->CreateIntCast(size,int64Ty,true), const_int(1), mainstream_v});
     return ret;
 }
 
@@ -106,7 +108,8 @@ extern "C" Value *bf16_pp_cpu(Parser_Struct *parser_struct, Function *TheFunctio
 extern "C" Value *bf16_cpu_cuda(Parser_Struct *parser_struct, Function *TheFunction,
                  std::string Callee, Data_Tree data_type, std::vector<Data_Tree> &args_type,
                  Value *scope_struct, std::vector<std::unique_ptr<ExprAST>> &Args, std::vector<Value*> &ArgsV) {
-    Value *size = Builder->CreateMul(ArgsV[1], const_int(2));
+    // Value *size = Builder->CreateMul(ArgsV[1], const_int(2));
+    Value *size = ArgsV[1];
     Value *ret = callret("allocate_pool", {scope_struct, const_int(8), const_int16(data_name_to_type()["bf16_pp"])});
     call("cudaMalloc", {ret, Builder->CreateIntCast(size, int64Ty, true)});
     
@@ -120,7 +123,8 @@ extern "C" Value *bf16_cpu_cuda(Parser_Struct *parser_struct, Function *TheFunct
 extern "C" Value *bf16_cpu_cupool(Parser_Struct *parser_struct, Function *TheFunction,
                  std::string Callee, Data_Tree data_type, std::vector<Data_Tree> &args_type,
                  Value *scope_struct, std::vector<std::unique_ptr<ExprAST>> &Args, std::vector<Value*> &ArgsV) {
-    Value *size = Builder->CreateMul(ArgsV[1], const_int(2));
+    // Value *size = Builder->CreateMul(ArgsV[1], const_int(2));
+    Value *size = ArgsV[1];
     Value *ret = callret("allocate_pool", {scope_struct, const_int(8), const_int16(data_name_to_type()["bf16_pp"])});
     
     Value *dest = callret("pool_alloc_bf16_pp", {scope_struct, size});

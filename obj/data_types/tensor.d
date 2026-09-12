@@ -102,6 +102,8 @@ obj/data_types/tensor.o: src/data_types/tensor.cu \
   src/../../../src/runtime/prebuild/prebuild.h \
   src/data_types/../common/cu_commons.h \
   src/data_types/../cuda_kernels/calculate_grids.h \
+  src/data_types/../cuda_threads/include.h \
+  src/data_types/../cuda_threads/threads.h \
   src/data_types/../tensor/include.h \
   src/data_types/../tensor/../../../../src/nsk_cpp.h \
   src/data_types/../tensor/print.h src/data_types/../tensor/save.h \
@@ -213,6 +215,8 @@ src/../../../src/runtime/threads/include.h:
 src/../../../src/runtime/prebuild/prebuild.h:
 src/data_types/../common/cu_commons.h:
 src/data_types/../cuda_kernels/calculate_grids.h:
+src/data_types/../cuda_threads/include.h:
+src/data_types/../cuda_threads/threads.h:
 src/data_types/../tensor/include.h:
 src/data_types/../tensor/../../../../src/nsk_cpp.h:
 src/data_types/../tensor/print.h:

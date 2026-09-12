@@ -13,12 +13,10 @@ img_load_ret::img_load_ret(void *float_cpu, DT_array *dims)
         : float_cpu(float_cpu), dims(dims) {}
 
 
-extern "C" img_load_ret load_image(Scope_Struct *scope_struct, char *img_name) {
-    // std::cout << "Image: " << img_name <<  "\n";
-
+extern "C" img_load_ret load_image(Scope_Struct *scope_struct, DT_str img_name, int C) {
     int width, height, channels;
-    unsigned char* image_data = stbi_load(img_name, &width, &height, &channels, 0);
-    // std::cout << "W " << width << ", H " << height  << ", C " << channels << "\n";
+    // std::cout << "open with " << C << "\n";
+    unsigned char* image_data = stbi_load(img_name.str, &width, &height, &channels, C);
 
     if (image_data) {
         DT_array *dims = newT<DT_array>(scope_struct, "array");
@@ -48,7 +46,7 @@ extern "C" img_load_ret load_image(Scope_Struct *scope_struct, char *img_name) {
 
         return img_load_ret((void*)ptr, dims);
     } else {
-        std::string img_n = img_name;
+        std::string img_n = img_name.str;
         std::string _error = "Failed to open image: " + img_n + ".\n\n";
         LogErrorC(scope_struct->code_line, _error);
     }
@@ -57,18 +55,15 @@ extern "C" img_load_ret load_image(Scope_Struct *scope_struct, char *img_name) {
 }
 
 
-extern "C" int float_cpu_load_img(Scope_Struct *scope_struct, void *float_cpu, char *img_name) {
-    // std::cout << "Image: " << img_name <<  "\n";
-
+extern "C" int float_cpu_load_img(Scope_Struct *scope_struct, void *float_cpu, DT_str img_name, int C) {
     int width, height, channels;
-    unsigned char* image_data = stbi_load(img_name, &width, &height, &channels, 0);
+    // std::cout << "open with " << C << "\n";
+    unsigned char* image_data = stbi_load(img_name.str, &width, &height, &channels, C);
     // std::cout << "W " << width << ", H " << height  << ", C " << channels << "\n";
 
     if (image_data) {
         float *image_data_float = *(float**)float_cpu;
-        // std::cout << "image_data_float " << image_data_float<< "\n";
 
-        // Loop through each pixel and convert to float between 0.0 and 1.0
         for (int y = 0; y < height; ++y) {
           for (int x = 0; x < width; ++x) {
             for (int c = 0; c < channels; ++c) {
@@ -81,7 +76,7 @@ extern "C" int float_cpu_load_img(Scope_Struct *scope_struct, void *float_cpu, c
 
         return 0;
     } else {
-        std::string img_n = img_name;
+        std::string img_n = img_name.str;
         std::string _error = "Failed to open image: " + img_n + ".\n\n";
         LogErrorC(scope_struct->code_line, _error);
     }

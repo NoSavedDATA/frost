@@ -28,15 +28,13 @@ class gpu_tensor
 			self.ptr = xavu_relu_cuda(self.dims_prod, dims[0], dims[1])
 			self.type = float_t
 		if init=="kaiming"
-			self.ptr = kaiming_cuda(self.dims_prod, dims[0], dims[1])
+			self.ptr = kaiming_cuda(self.dims_prod, dims[0], dims[1],1)
 			self.type = float_t
 		if init=="kaiming_relu"
-			self.ptr = kaiming_relu_cuda(self.dims_prod, dims[0], dims[1])
+			self.ptr = kaiming_cuda(self.dims_prod, dims[0], dims[1],1.4241)
 			self.type = float_t
 		if init=="conv"
-			#self.ptr = kaiming_relu_cuda(self.dims_prod, dims[0]*dims[-1]*dims[-1], dims[1]*dims[-1]*dims[-1])
-			self.ptr = xavu_cuda(self.dims_prod, dims[0]*dims[-1]*dims[-1], dims[1]*dims[-1]*dims[-1])
-			#self.ptr = xavu_conv(dims[0], dims[1], dims[2], dims[3], self.dims_prod)
+			self.ptr = conv_w_cuda(self.dims_prod, dims[1]*dims[-2]*dims[-1], 0,1)
 			self.type = float_t
 		if init=="randu"
 			self.ptr = randu_cuda(self.dims_prod)
@@ -105,7 +103,7 @@ class gpu_tensor
 	def int load_img(str path)
 		float_cpu img
 		array<int> img_dims
-		img, img_dims = load_image(path)
+		img, img_dims = load_image(path, 3)
 		self.dims = img_dims
 		self.dims_prod = img_dims.prod()
 		self.ptr = img.cuda(img_dims.prod())
@@ -146,7 +144,7 @@ def gpu_tensor image_gpu_tensor(str path)
 	float_cpu img
 	array<int> img_dims
 	#print("open img ", path)
-	img, img_dims = load_image(path)
+	img, img_dims = load_image(path, 3)
 	gpu_tensor ret = new gpu_tensor(img_dims, "none")
 	ret.ptr = img.cuda(img_dims.prod())
 	return ret

@@ -15,10 +15,12 @@ llvm::Type *bf16_cpu_llvm(std::unique_ptr<LLVMContext> &ctx) {
 
 
 extern "C" void initialize__frost() {
-  for (int i=0;i<10;++i) {
-    cudaStream_t thread_stream = createCudaStream();
-    ThreadsStream[i] = thread_stream;
-  }
+
+  main_stream = createCudaStream();
+  ThreadsStream[0] = main_stream;
+  for (int i=1;i<10;++i)
+    ThreadsStream[i] = createCudaStream();
+  // std::cout << "MAINSTREAM " << main_stream << "\n";
   
   int deviceIdx = 0;
   cudaCheck(cudaSetDevice(deviceIdx));
@@ -55,8 +57,7 @@ extern "C" void initialize__frost() {
   
   cudnnCreate(&cudnn);
 
-  std::cout << "Tile size is: " << TILE_SIZE << ".\n\n";
-  main_stream = createCudaStream();
+
 
 
 

@@ -14,7 +14,7 @@ kernel void AdamW_k(float[] param, float[] d, float[] m, float[] v,
 					float lr, int n, float beta1, float beta2,
 					float beta1_correction, float beta2_correction,
 					float eps, float wd)
-	int i = bx*256 + tx
+	int i = bx*1024 + tx
 	if i>=n
 		return
 
@@ -51,7 +51,7 @@ class AdamW
 			float beta1_correction = 1.0-pow(self.beta1, self.ts)
 			float beta2_correction = 1.0-pow(self.beta2, self.ts)
 
-			launch [param.dims_prod/|256] [256] AdamW_k(param.ptr offby 0, param.d offby 0,
+			launch [param.dims_prod/|1024] [1024] AdamW_k(param.ptr offby 0, param.d offby 0,
 									 self.m[i].ptr offby 0, self.v[i].ptr offby 0,
 									 self.lr, param.dims_prod, self.beta1, self.beta2,
 									 beta1_correction, beta2_correction, self.eps,
@@ -59,6 +59,6 @@ class AdamW
 								 )
 			param.d=nil
 			i=i+1
-			self.ts = self.ts+1
+		self.ts = self.ts+1
 		$optim_info.params.clear()
 		tarena_reset()

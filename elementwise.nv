@@ -1,0 +1,5 @@
+
+
+def void gpu_tensor_set(gpu_tensor x, float val)
+	int n = x.dims_prod
+	launch [n/|256] [256] set_kernel(x.ptr offby 0, val, n)

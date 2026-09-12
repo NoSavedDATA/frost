@@ -165,29 +165,29 @@ float* make_xavier_uniform_float(size_t N, int fan_in, int fan_out) {
     return arr;
 }
 
-float* make_kaiming_uniform_float(size_t N, int fan_in, int fan_out) {
-    float xavier_scale = sqrt(3/(float)(fan_in));
+float* make_kaiming_uniform_float(size_t N, int fan_in, int fan_out, float scale) {
+    float kaiming_scale = scale*sqrt(3/(float)(fan_in));
 
     std::uniform_real_distribution<float> dist(-1.0f, 1.0f);
 
     float* arr = (float*)malloc(N * sizeof(float));
     for (size_t i = 0; i < N; i++)
-        arr[i] = xavier_scale*dist(WEIGHT_PRNG);
+        arr[i] = kaiming_scale*dist(WEIGHT_PRNG);
     
     return arr;
 }
-float* make_kaiming_relu_uniform_float(size_t N, int fan_in, int fan_out) {
-    float xavier_scale = 1.4142*sqrt(3/(float)(fan_in));
+
+float* make_conv_kaiming_float(size_t N, int fan_in, int fan_out, float scale) {
+    float kaiming_scale = scale*sqrt(1/(float)(fan_in));
 
     std::uniform_real_distribution<float> dist(-1.0f, 1.0f);
 
     float* arr = (float*)malloc(N * sizeof(float));
     for (size_t i = 0; i < N; i++)
-        arr[i] = xavier_scale*dist(WEIGHT_PRNG);
+        arr[i] = kaiming_scale*dist(WEIGHT_PRNG);
     
     return arr;
 }
-
 
 
 float* make_xavier_uniform_float_fixed(size_t N, int fan_in, int fan_out, int seed) {

@@ -116,8 +116,6 @@ obj/cuda_kernels/tensor_tensor_codegen.o: \
   /nsk/lib/eigen3/../frost/src/cuda_kernels/../../../../src/nsk_cpp.h \
   /nsk/lib/eigen3/../frost/src/cuda_kernels/activation_functions/include.h \
   /nsk/lib/eigen3/../frost/src/cuda_kernels/activation_functions/activation_kernels.h \
-  /nsk/lib/eigen3/../frost/src/cuda_kernels/image_processing/include.h \
-  /nsk/lib/eigen3/../frost/src/cuda_kernels/image_processing/kernels.h \
   /nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/include.h \
   /nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/classification_kernels.h \
   /nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/classification.h \
@@ -264,8 +262,6 @@ src/cuda_kernels/../mma/general.h:
 /nsk/lib/eigen3/../frost/src/cuda_kernels/../../../../src/nsk_cpp.h:
 /nsk/lib/eigen3/../frost/src/cuda_kernels/activation_functions/include.h:
 /nsk/lib/eigen3/../frost/src/cuda_kernels/activation_functions/activation_kernels.h:
-/nsk/lib/eigen3/../frost/src/cuda_kernels/image_processing/include.h:
-/nsk/lib/eigen3/../frost/src/cuda_kernels/image_processing/kernels.h:
 /nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/include.h:
 /nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/classification_kernels.h:
 /nsk/lib/eigen3/../frost/src/cuda_kernels/loss_functions/classification.h:

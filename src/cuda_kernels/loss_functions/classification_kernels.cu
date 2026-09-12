@@ -24,7 +24,7 @@ __global__ void crossentropy_softmax_backward_kernel1(float* dlogits,
         //float indicator = (v==ix) ? 1.0f : 0.0f; // one-hot already
         float indicator = ix;
 
-        dlogits_b[v] += (p - indicator);
+        dlogits_b[v] += (p - indicator) / (float)B;
         // dlogits_b[v] += (p - indicator) * scale;
     }
 }
@@ -50,7 +50,7 @@ __global__ void crossentropy_idx_backward_kernel(float* dlogits,
         float indicator = (v==targets[b]) ? 1.0f : 0.0f;
         //float indicator = ix;
 
-        dlogits_b[v] += (p - indicator);
+        dlogits_b[v] += (p - indicator) / (float)B;
         // dlogits_b[v] += (p - indicator) * scale;
 
     }

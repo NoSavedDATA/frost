@@ -151,3 +151,7 @@ void StreamAwaitStreamB(cudaStream_t A, cudaStream_t B)
   cudaStreamWaitEvent(A, event, 0);
   cudaEventDestroy(event);
 }
+
+extern "C" void * get_mainstream(Scope_Struct *ctx) {
+    return main_stream;
+}

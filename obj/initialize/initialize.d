@@ -105,8 +105,6 @@ obj/initialize/initialize.o: src/initialize/initialize.cu \
   src/initialize/../cuda_kernels/../../../../src/nsk_cpp.h \
   src/initialize/../cuda_kernels/activation_functions/include.h \
   src/initialize/../cuda_kernels/activation_functions/activation_kernels.h \
-  src/initialize/../cuda_kernels/image_processing/include.h \
-  src/initialize/../cuda_kernels/image_processing/kernels.h \
   src/initialize/../cuda_kernels/loss_functions/include.h \
   src/initialize/../cuda_kernels/loss_functions/classification_kernels.h \
   src/initialize/../cuda_kernels/loss_functions/classification.h \
@@ -522,8 +520,6 @@ src/initialize/../cuda_kernels/include.h:
 src/initialize/../cuda_kernels/../../../../src/nsk_cpp.h:
 src/initialize/../cuda_kernels/activation_functions/include.h:
 src/initialize/../cuda_kernels/activation_functions/activation_kernels.h:
-src/initialize/../cuda_kernels/image_processing/include.h:
-src/initialize/../cuda_kernels/image_processing/kernels.h:
 src/initialize/../cuda_kernels/loss_functions/include.h:
 src/initialize/../cuda_kernels/loss_functions/classification_kernels.h:
 src/initialize/../cuda_kernels/loss_functions/classification.h:
